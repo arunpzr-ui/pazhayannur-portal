@@ -1,0 +1,165 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import town from "../data/town.json";
+---
+
+<Base
+  title="Geography"
+  description="Pazhayannur's terrain, boundaries and rainfall — 59.03 sq km sitting against the Palakkad border, from paddy fields and plantation to reserve forest."
+>
+  <Fragment slot="nav">
+    <Nav />
+  </Fragment>
+
+  <div class="relative overflow-hidden pt-40 pb-20 px-6">
+    <div class="mx-auto max-w-6xl">
+      <a
+        href="/"
+        class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/40 hover:text-rice/70 transition-colors"
+      >
+        &larr; Pazhayannur
+      </a>
+
+      <div class="tagline-rule my-6"></div>
+
+      <div class="reveal flex items-baseline gap-4">
+        <span class="font-mono text-xs text-rice/40">03</span>
+        <h1 class="font-display font-extrabold text-5xl md:text-7xl leading-[0.92] tracking-[-0.035em]">
+          Geography
+          <span lang="ml" class="block font-mal text-2xl md:text-3xl text-rice/45 mt-3 font-normal">
+            ഭൂമിശാസ്ത്രം
+          </span>
+        </h1>
+      </div>
+
+      <p class="reveal text-rice/60 mt-8 max-w-xl leading-relaxed" style="--d:110ms">
+        {town.rainfall.summary}
+      </p>
+      <p lang="ml" class="reveal font-mal text-rice/40 mt-2 max-w-xl leading-relaxed" style="--d:110ms">
+        {town.rainfall.summaryMl}
+      </p>
+    </div>
+  </div>
+
+  <section class="border-y border-rice/12 bg-ink2">
+    <div class="mx-auto max-w-6xl px-6 py-16 grid grid-cols-3 gap-8 max-w-xl">
+      <div class="reveal">
+        <p
+          class="font-display font-extrabold text-4xl md:text-5xl text-vaka"
+          data-count={town.area.value}
+          data-decimals="2"
+          data-suffix=""
+        >
+          0
+        </p>
+        <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mt-2">Area sq km</p>
+        <p lang="ml" class="font-mal text-sm text-rice/40 mt-1">വിസ്തീർണ്ണം</p>
+      </div>
+      <div class="reveal" style="--d:110ms">
+        <p
+          class="font-display font-extrabold text-4xl md:text-5xl text-vaka"
+          data-count={town.elevation.min}
+          data-decimals="0"
+          data-suffix=" m"
+        >
+          0
+        </p>
+        <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mt-2">Lowest point</p>
+        <p lang="ml" class="font-mal text-sm text-rice/40 mt-1">ഏറ്റവും താഴ്ന്ന സ്ഥലം</p>
+      </div>
+      <div class="reveal" style="--d:220ms">
+        <p
+          class="font-display font-extrabold text-4xl md:text-5xl text-vaka"
+          data-count={town.elevation.max}
+          data-decimals="0"
+          data-suffix=" m"
+        >
+          0
+        </p>
+        <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mt-2">Highest point</p>
+        <p lang="ml" class="font-mal text-sm text-rice/40 mt-1">ഉയരം</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-vaka)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">Boundaries</span>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl">
+          What borders Pazhayannur
+          <span lang="ml" class="block font-mal text-base text-rice/45 mt-2">അതിരുകൾ</span>
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4 max-w-3xl">
+        {town.boundaries.map((b, i) => (
+          <div class="reveal glass glass-hover rounded-2xl p-6" style={`--d:${i * 90}ms`}>
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-vaka/80 mb-2">{b.direction}</p>
+            <p class="text-rice/70">{b.place}</p>
+            <p lang="ml" class="font-mal text-sm text-rice/40 mt-1">{b.placeMl}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-24 bg-ink2 border-y border-rice/12">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-vaka)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">Terrain</span>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl">
+          Land, soil and cultivation
+          <span lang="ml" class="block font-mal text-base text-rice/45 mt-2">ഭൂപ്രകൃതി</span>
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4 max-w-3xl">
+        {town.terrain.map((t, i) => (
+          <div class="reveal glass glass-hover rounded-2xl p-6" style={`--d:${i * 90}ms`}>
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-vaka/80 mb-2">{t.label}</p>
+            <p class="text-rice/70">{t.value}</p>
+            <p lang="ml" class="font-mal text-sm text-rice/40 mt-1">{t.ml}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-vaka)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">Coordinates</span>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl">
+          On the map
+          <span lang="ml" class="block font-mal text-base text-rice/45 mt-2">ഭൂപടത്തിൽ</span>
+        </h2>
+      </div>
+
+      <div class="reveal glass glass-hover rounded-2xl p-8 max-w-md" style="--d:110ms">
+        <div class="grid grid-cols-2 gap-6 font-mono text-sm">
+          <div>
+            <p class="text-[10px] tracking-[0.22em] uppercase text-rice/45 mb-1">Latitude</p>
+            <p class="text-rice/75">{town.coordinates.lat}&deg; N</p>
+          </div>
+          <div>
+            <p class="text-[10px] tracking-[0.22em] uppercase text-rice/45 mb-1">Longitude</p>
+            <p class="text-rice/75">{town.coordinates.lng}&deg; E</p>
+          </div>
+        </div>
+        <p class="text-rice/50 text-sm leading-relaxed mt-6">
+          {town.pincode} &middot; {town.taluk} Taluk, {town.district} District, {town.state}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</Base>
