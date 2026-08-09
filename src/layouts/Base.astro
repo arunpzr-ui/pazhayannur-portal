@@ -17,6 +17,7 @@ import "@fontsource/anek-malayalam/latin.css";
 
 import "../styles/global.css";
 import town from "../data/town.json";
+import Banner from "../components/Banner.astro";
 
 interface Props {
   /** Page title, without the site suffix. */
@@ -112,6 +113,8 @@ const jsonLd = {
     >
       Skip to content
     </a>
+
+    <Banner />
 
     <slot name="nav" />
 
