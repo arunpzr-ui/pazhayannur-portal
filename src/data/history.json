@@ -5,10 +5,10 @@
     "eraMl": "പേരിന്റെ പിറവി",
     "title": "Pazhayan, and a deity from Kashi",
     "titleMl": "പഴയനും കാശിയിൽ നിന്നുള്ള ദേവിയും",
-    "summary": "Tradition holds that the town takes its name from Pazhayan, a toddy seller among the Kongans of Tanjore. The Kochi Maharaja is remembered as having brought the presiding deity here from Kashi.",
-    "summaryMl": "തഞ്ചാവൂരിലെ കൊങ്ങന്മാരിൽപ്പെട്ട മധുവ്യാപാരി പഴയനിൽ നിന്നാണ് ഈ നാടിന് പേര് ലഭിച്ചതെന്ന് പഴമക്കാർ പറയുന്നു.",
+    "summary": "Local tradition offers two accounts of the name. One holds it comes from Pazhayan, a toddy trader among the Kongans of the old Thanjavur dynasty, granted this land as his birthright — the settlement was first called Pazhayannur after him. A separate temple tradition holds that an ailing Kochi Maharaja, returning from penance at Kashi, installed his family deity here beside the old Pallipuram shrine, in a place then known as Puranapuri — believed to be the origin of today's Pazhayannur.",
+    "summaryMl": "തഞ്ചാവൂർ കൊങ്ങന്മാർ അവരുടെ മധുവ്യാപാരിയായ പഴയന് ജന്മാവകാശമായി നൽകിയ ഈ ഊര് ആദ്യം പഴയന്നൂര് എന്നും പിന്നീട് പഴയന്നൂർ എന്നും അറിയപ്പെട്ടു എന്നാണ് ഒരു വിശ്വാസം. കാശിയിൽ ഭജനമിരുന്നു മടങ്ങിയ കൊച്ചി രാജാവ് തന്റെ ഇഷ്ടദേവതയെ പള്ളിപ്പുറത്തപ്പന്റെ സമീപം പ്രതിഷ്ഠിച്ചു എന്ന മറ്റൊരു ക്ഷേത്രപാരമ്പര്യവുമുണ്ട്.",
     "sourceType": "oral tradition",
-    "_sourceNote": "Phrase as tradition, never as documented fact.",
+    "_sourceNote": "Two competing accounts, both oral tradition. Phrase as tradition, never as documented fact.",
     "image": "history-origins.jpg",
     "imageAlt": "Placeholder — replace with a photograph of the temple or the old settlement",
     "featured": true
@@ -19,8 +19,8 @@
     "eraMl": "ടിപ്പുവിന്റെ പടയോട്ടം",
     "title": "The women of Kuttadanthodu",
     "titleMl": "കുട്ടാടൻതോട്",
-    "summary": "When Tipu Sultan's forces advanced, local accounts tell of the women of Pazhayannur meeting them at Kuttadanthodu armed with brooms and pestles, and driving them back. Weapons were recovered at the site long afterwards.",
-    "summaryMl": "ടിപ്പു സുൽത്താന്റെ സൈന്യം എത്തിയപ്പോൾ കുട്ടാടൻതോട്ടിൽ വെച്ച് പഴയന്നൂരിലെ സ്ത്രീകൾ ചൂലും ഉലക്കയുമായി അവരെ നേരിട്ട് പിന്തിരിപ്പിച്ചു എന്നാണ് നാട്ടുകാർ പറയുന്നത്.",
+    "summary": "When Tipu Sultan's forces marched from Thrithankali (Kondazhi) toward Pazhayannur, the Thenazhi Madhakkar who then held Elanad fled, abandoning their holdings. Local accounts tell of the women of Pazhayannur meeting the army at Kuttadanthodu armed with brooms, winnows and pestles, and driving them back. Weapons and building remains were recovered at the site decades later.",
+    "summaryMl": "ടിപ്പുവിന്റെ സൈന്യം കൊണ്ടാഴിയിൽ നിന്ന് പഴയന്നൂരിലേക്ക് നീങ്ങിയപ്പോൾ എളനാട് ഭരിച്ചിരുന്ന തേനാഴി മഠക്കാർ എല്ലാം ഉപേക്ഷിച്ച് ഓടിപ്പോയി. എന്നാൽ പഴയന്നൂരിലെ സ്ത്രീകൾ ചൂലും മുറവും ഉലക്കയുമായി കുട്ടാടൻതോട്ടിൽ വെച്ച് അവരെ നേരിട്ട് പിന്തിരിപ്പിച്ചു എന്നാണ് നാട്ടുകാർ പറയുന്നത്.",
     "sourceType": "oral tradition",
     "_sourceNote": "Dating is approximate — Tipu's Kerala campaigns fall around 1789–90. Confirm before publishing a firm year.",
     "image": "history-kuttadanthodu.jpg",
@@ -38,6 +38,33 @@
     "sourceType": "documented",
     "image": "history-reform.jpg",
     "imageAlt": "Placeholder — replace with a photograph of the ALP School at Kunnathara",
+    "featured": false
+  },
+  {
+    "slug": "govt-high-school",
+    "era": "1947–48",
+    "eraMl": "വിദ്യാഭ്യാസ വളർച്ച",
+    "title": "A second school, and a high school",
+    "titleMl": "രണ്ടാമത്തെ വിദ്യാലയവും ഹൈസ്കൂളും",
+    "summary": "A private school opened at Vadakkethara in 1947. It became a government institution the following year and started high school classes — Pazhayannur Government High School, established in 1948.",
+    "summaryMl": "1947-ൽ വടക്കേത്തറയിൽ സ്വകാര്യമേഖലയിൽ ഒരു സ്കൂൾ സ്ഥാപിതമായി. അടുത്ത വർഷം ഇത് സർക്കാർ സ്ഥാപനമായി മാറുകയും ഹൈസ്കൂൾ ക്ലാസുകൾ ആരംഭിക്കുകയും ചെയ്തു — 1948-ൽ സ്ഥാപിതമായ പഴയന്നൂർ ഗവ. ഹൈസ്കൂൾ.",
+    "sourceType": "documented",
+    "image": "history-govt-high-school.jpg",
+    "imageAlt": "Placeholder — replace with a photograph of Pazhayannur Government High School",
+    "featured": false
+  },
+  {
+    "slug": "land-reform",
+    "era": "Land reform era",
+    "eraMl": "ഭൂപരിഷ്കരണ കാലം",
+    "title": "The end of the janmi-kudiyan system",
+    "titleMl": "ജന്മി-കുടിയാൻ സമ്പ്രദായത്തിന്റെ അന്ത്യം",
+    "summary": "Kerala's land reform law dismantled the landlord-tenant system here as elsewhere. Tenant farmers who had leased land from janmis became smallholders, and the old paddy-farming and irrigation practices changed as land was divided into smaller holdings.",
+    "summaryMl": "ഭൂപരിഷ്കരണനിയമം നിലവിൽ വന്നതോടെ ജന്മി-കുടിയാൻ സമ്പ്രദായം ഇവിടെയും തകർന്നു. ജന്മിമാരിൽ നിന്ന് പാട്ടത്തിനെടുത്ത് കൃഷി ചെയ്തിരുന്ന കുടിയാന്മാർ ചെറുകിട കർഷകരായി മാറി; ഭൂമി തുണ്ടുതുണ്ടായതോടെ പഴയ ജലസേചനരീതികൾക്കും മാറ്റം വന്നു.",
+    "sourceType": "documented",
+    "_sourceNote": "No specific year given in source material for this transition. Left as a broad era rather than an invented date.",
+    "image": "history-land-reform.jpg",
+    "imageAlt": "Placeholder — replace with a photograph of paddy fields in Pazhayannur",
     "featured": false
   }
 ]

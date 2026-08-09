@@ -5,16 +5,49 @@
       "yearMl": "കൊല്ലവർഷം 1110",
       "title": "A royal panchayat",
       "titleMl": "രാജകീയ പഞ്ചായത്ത്",
-      "body": "Constituted under the Kochi state, with C. Karunakaran Nair at its head.",
-      "bodyMl": "കൊച്ചി രാജ്യത്തിന് കീഴിൽ സി. കരുണാകരൻ നായരുടെ നേതൃത്വത്തിൽ രൂപീകൃതമായി."
+      "body": "Constituted under the Kochi state. C. Karunakaran Nair became the first president in 1114 ME; R. Krishna Iyer was elected to succeed him in 1119 ME.",
+      "bodyMl": "കൊച്ചി രാജ്യത്തിന് കീഴിൽ രൂപീകൃതമായി. 1114-ൽ സി. കരുണാകരൻ നായർ ആദ്യ പ്രസിഡന്റായി; 1119-ൽ ആർ. കൃഷ്ണയ്യർ അധികാരമേറ്റു."
     },
     {
-      "year": "1954",
-      "yearMl": "ആദ്യ തിരഞ്ഞെടുപ്പ്",
-      "title": "The first elected president",
-      "titleMl": "ആദ്യ പ്രസിഡന്റ്",
-      "body": "Aachattil Narayanankutty Menon took office in the first election after independence.",
-      "bodyMl": "സ്വാതന്ത്ര്യാനന്തരമുള്ള ആദ്യ തിരഞ്ഞെടുപ്പിൽ ആചാട്ടിൽ നാരായണൻകുട്ടി മേനോൻ അധികാരമേറ്റു."
+      "year": "1950",
+      "yearMl": "1950",
+      "title": "The post-independence committee",
+      "titleMl": "സ്വാതന്ത്ര്യാനന്തര സമിതി",
+      "body": "Aachattil Narayanankutty Menon presided over the committee in office this year, per panchayat records.",
+      "bodyMl": "ഈ വർഷം നിലവിലിരുന്ന ഭരണസമിതിയുടെ പ്രസിഡന്റ് ആചാട്ടിൽ നാരായണൻകുട്ടി മേനോൻ ആയിരുന്നു എന്ന് പഞ്ചായത്തുരേഖകളിൽ കാണുന്നു.",
+      "_correctionNote": "Previously listed as '1954 – the first elected president after independence.' Corrected against fuller panchayat records, which show Menon presiding as of 1950 and do not support the 'first election' framing."
+    },
+    {
+      "year": "1963–64",
+      "yearMl": "1963–64",
+      "title": "The first woman member",
+      "titleMl": "ആദ്യ വനിതാ അംഗം",
+      "body": "A new committee took office under K. Shankunni Menon in 1963. The following year, Easwari Ammal was nominated as the panchayat's first woman member.",
+      "bodyMl": "1963-ൽ കെ. ശങ്കുണ്ണി മേനോന്റെ നേതൃത്വത്തിൽ പുതിയ സമിതി അധികാരമേറ്റു. 1964-ൽ ഈശ്വരി അമ്മാളെ പഞ്ചായത്തിന്റെ ആദ്യ വനിതാ അംഗമായി നോമിനേറ്റ് ചെയ്തു."
+    },
+    {
+      "year": "1974",
+      "yearMl": "1974",
+      "title": "A new president",
+      "titleMl": "പുതിയ പ്രസിഡന്റ്",
+      "body": "C.S. Sukumaran was elected president on 19 February 1974.",
+      "bodyMl": "1974 ഫെബ്രുവരി 19-ന് സി.എസ്. സുകുമാരൻ പ്രസിഡന്റായി തിരഞ്ഞെടുക്കപ്പെട്ടു."
+    },
+    {
+      "year": "1995",
+      "yearMl": "1995",
+      "title": "The Panchayati Raj era begins",
+      "titleMl": "പഞ്ചായത്ത് രാജ് യുഗം",
+      "body": "The first election under Kerala's Panchayati Raj Act returned a 13-member committee, with P.A. Babu as president.",
+      "bodyMl": "പഞ്ചായത്ത് രാജ് നിയമപ്രകാരമുള്ള ആദ്യ തിരഞ്ഞെടുപ്പിൽ 13 അംഗ സമിതി അധികാരമേറ്റു; പ്രസിഡന്റ് പി.എ. ബാബു."
+    },
+    {
+      "year": "2005",
+      "yearMl": "2005",
+      "title": "A 21-member committee",
+      "titleMl": "21 അംഗ സമിതി",
+      "body": "Ramaradhakrishnan was elected president of a 21-member committee, with P.A. Babu as vice president.",
+      "bodyMl": "21 അംഗ സമിതിയുടെ പ്രസിഡന്റായി രമാരാധാകൃഷ്ണൻ തിരഞ്ഞെടുക്കപ്പെട്ടു; വൈസ് പ്രസിഡന്റ് പി.എ. ബാബു."
     },
     {
       "year": "2025",
@@ -29,27 +62,32 @@
     {
       "name": "President — Sajitha Murali",
       "ml": "പ്രസിഡന്റ്",
-      "body": "Heads the elected committee and chairs its meetings. Term beginning 2025."
+      "body": "Heads the elected committee and chairs its meetings. Term beginning 2025.",
+      "bodyMl": "തിരഞ്ഞെടുക്കപ്പെട്ട സമിതിയെ നയിക്കുകയും യോഗങ്ങൾക്ക് അധ്യക്ഷത വഹിക്കുകയും ചെയ്യുന്നു. 2025-ൽ ആരംഭിച്ച ഭരണകാലാവധി."
     },
     {
       "name": "Vice President — Suresh C.C.",
       "ml": "വൈസ് പ്രസിഡന്റ്",
-      "body": "Deputises for the president and works with the standing committees."
+      "body": "Deputises for the president and works with the standing committees.",
+      "bodyMl": "പ്രസിഡന്റിന് പകരക്കാരനായി പ്രവർത്തിക്കുകയും സ്റ്റാൻഡിംഗ് കമ്മിറ്റികളുമായി സഹകരിച്ച് പ്രവർത്തിക്കുകയും ചെയ്യുന്നു."
     },
     {
       "name": "The elected committee",
       "ml": "ഭരണസമിതി",
-      "body": "Twenty-four members, elected by ward, meeting to approve the annual plan and budget."
+      "body": "Twenty-four members, elected by ward, meeting to approve the annual plan and budget.",
+      "bodyMl": "വാർഡ് തിരിച്ച് തിരഞ്ഞെടുക്കപ്പെട്ട ഇരുപത്തിനാല് അംഗങ്ങൾ, വാർഷിക പദ്ധതിയും ബജറ്റും അംഗീകരിക്കാൻ യോഗം ചേരുന്നു."
     },
     {
       "name": "Standing committees",
       "ml": "സ്റ്റാൻഡിംഗ് കമ്മിറ്റികൾ",
-      "body": "Subject committees covering finance, development, welfare, health and public works. Membership to be added."
+      "body": "Subject committees covering finance, development, welfare, health and public works. The 2025 chairs are Akhila C.U., Siji John and Nirmala T.",
+      "bodyMl": "ധനകാര്യം, വികസനം, ക്ഷേമം, ആരോഗ്യം, പൊതുമരാമത്ത് എന്നിവ കൈകാര്യം ചെയ്യുന്ന സ്റ്റാൻഡിംഗ് കമ്മിറ്റികൾ. 2025-ലെ ചെയർമാൻമാർ: അഖില സി.യു, സിജി ജോൺ, നിർമ്മല ടി."
     },
     {
       "name": "Ninety years of self-government",
       "ml": "തൊണ്ണൂറ് വർഷത്തെ ഭരണം",
-      "body": "From the royal panchayat of 1110 ME to the present council — the full list of presidents since 1954 is being compiled."
+      "body": "From the royal panchayat of 1110 ME to the present council, presidents have included C. Karunakaran Nair, R. Krishna Iyer, Aachattil Narayanankutty Menon, C.S. Sukumaran, M.P. Varghese, P.A. Babu, K. Ramankutty, K. Kunjankutty, Ramaradhakrishnan, P.K. Muralidharan and Sobhana Rajan.",
+      "bodyMl": "കൊല്ലവർഷം 1110-ലെ രാജപഞ്ചായത്ത് മുതൽ ഇന്നത്തെ സമിതി വരെ, സി. കരുണാകരൻ നായർ, ആർ. കൃഷ്ണയ്യർ, ആചാട്ടിൽ നാരായണൻകുട്ടി മേനോൻ, സി.എസ്. സുകുമാരൻ, എം.പി. വർഗ്ഗീസ്, പി.എ. ബാബു, കെ. രാമൻകുട്ടി, കെ. കുഞ്ഞൻകുട്ടി, രമാരാധാകൃഷ്ണൻ, പി.കെ. മുരളീധരൻ, ശോഭന രാജൻ എന്നിവർ പ്രസിഡന്റുമാരായിരുന്നിട്ടുണ്ട്."
     }
   ]
 }

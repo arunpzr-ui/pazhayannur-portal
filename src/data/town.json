@@ -91,6 +91,11 @@
   ],
   "terrain": [
     {
+      "label": "Villages",
+      "ml": "വില്ലേജുകൾ",
+      "value": "Pazhayannur, Vadakkethara, Elanad, Vennur"
+    },
+    {
       "label": "Elevation",
       "ml": "ഉയരം",
       "value": "30 – 220 m ASL"
@@ -109,6 +114,11 @@
       "label": "Cultivation",
       "ml": "കൃഷി",
       "value": "Paddy fields and banana"
+    },
+    {
+      "label": "Highlands",
+      "ml": "മലനിരകൾ",
+      "value": "Forested hills, peacock hills, wildlife and rock formations"
     }
   ],
   "rainfall": {

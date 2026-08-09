@@ -24,8 +24,21 @@
     {
       "name": "Praseetha",
       "ml": "പ്രസീത",
-      "role": "Child artist",
-      "roleMl": "ബാലതാരം"
+      "role": "Child artist · State Award winner",
+      "roleMl": "ബാലതാരം · സംസ്ഥാന അവാർഡ് ജേതാവ്"
+    },
+    {
+      "name": "Kalamandalam Parameshwaran",
+      "ml": "കലാമണ്ഡലം പരമേശ്വരൻ",
+      "role": "Ottamthullal artist",
+      "roleMl": "ഓട്ടൻതുള്ളൽ വിദ്വാൻ"
+    },
+    {
+      "name": "Pothuval",
+      "ml": "പൊതുവാൾ",
+      "role": "Kathakali artist",
+      "roleMl": "കഥകളി വിദ്വാൻ",
+      "_verify": "Only the title/surname 'Pothuval' was available in the source description — full given name not confirmed."
     }
   ],
 
@@ -38,11 +51,18 @@
       "imageAlt": "Placeholder — replace with a photograph of the Aarattu festival"
     },
     {
-      "tag": "Feast",
+      "tag": "Mosque",
       "title": "Vellarkulam Palli",
       "ml": "വെള്ളാർകുളം പള്ളി",
       "image": "culture-vellarkulam.jpg",
       "imageAlt": "Placeholder — replace with a photograph of Vellarkulam Palli"
+    },
+    {
+      "tag": "Koothu",
+      "title": "Kootharangu, Pazhayannur Temple",
+      "ml": "പഴയന്നൂർ ക്ഷേത്രത്തിലെ കൂത്തരങ്ങ്",
+      "image": "culture-kootharangu.jpg",
+      "imageAlt": "Placeholder — replace with a photograph of the Kootharangu stage"
     },
     {
       "tag": "Two inheritances",

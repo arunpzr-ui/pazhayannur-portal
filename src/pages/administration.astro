@@ -146,6 +146,9 @@ const currentCommittee = administration.timeline.at(-1)!;
             <p class="font-display font-bold">{c.name}</p>
             <p lang="ml" class="font-mal text-sm text-rice/45 mt-1">{c.ml}</p>
             <p class="text-rice/60 text-sm leading-relaxed mt-4">{c.body}</p>
+            {c.bodyMl && (
+              <p lang="ml" class="font-mal text-rice/40 text-sm leading-relaxed mt-2">{c.bodyMl}</p>
+            )}
           </div>
         ))}
       </div>
