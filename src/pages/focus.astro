@@ -3,11 +3,14 @@ import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import focus from "../data/focus.json";
+
+const totalCrores = Math.round((focus.totalBudget / 1e7) * 100) / 100;
+const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
 ---
 
 <Base
   title="Development focus"
-  description="The thirteen sectors Pazhayannur's local development planning is organised around, from agriculture and drinking water to social justice."
+  description={`The ${focus.year} annual development plan for Pazhayannur — ${focus.totalProjects} projects worth ${inr(focus.totalBudget)} across ${focus.sectors.length} sectors.`}
 >
   <Fragment slot="nav">
     <Nav />
@@ -35,26 +38,47 @@ import focus from "../data/focus.json";
       </div>
 
       <p class="reveal text-rice/60 mt-8 max-w-xl leading-relaxed" style="--d:110ms">
-        The sectors Pazhayannur's local development planning is organised around —
-        the same categories the panchayat's standing committees work through each
-        year to shape the annual plan and budget.
+        The {focus.year} annual development plan — every project the panchayat's
+        standing committees have budgeted for this year, grouped by sector.
       </p>
     </div>
   </div>
 
   <section class="border-y border-rice/12 bg-ink2">
-    <div class="mx-auto max-w-6xl px-6 py-16">
+    <div class="mx-auto max-w-6xl px-6 py-16 grid grid-cols-1 sm:grid-cols-3 gap-8">
       <div class="reveal">
+        <p class="font-display font-extrabold text-4xl md:text-5xl">
+          <span class="text-rice/50 text-2xl align-top mr-1">₹</span><span
+            data-count={totalCrores}
+            data-decimals="2"
+            data-suffix=" Cr"
+          >0</span>
+        </p>
+        <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mt-2">
+          Total budget &middot; {focus.year}
+        </p>
+      </div>
+      <div class="reveal" style="--d:110ms">
         <p
           class="font-display font-extrabold text-4xl md:text-5xl"
-          data-count={focus.length}
+          data-count={focus.totalProjects}
+          data-decimals="0"
+          data-suffix=""
+        >
+          0
+        </p>
+        <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mt-2">Projects</p>
+      </div>
+      <div class="reveal" style="--d:220ms">
+        <p
+          class="font-display font-extrabold text-4xl md:text-5xl"
+          data-count={focus.sectors.length}
           data-decimals="0"
           data-suffix=""
         >
           0
         </p>
         <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mt-2">Sectors</p>
-        <p lang="ml" class="font-mal text-sm text-rice/40 mt-1">മേഖലകൾ</p>
       </div>
     </div>
   </section>
@@ -63,22 +87,105 @@ import focus from "../data/focus.json";
     <div class="mx-auto max-w-6xl">
       <div class="rule mb-6" style="--key: var(--color-ink3)"></div>
       <div class="reveal flex items-baseline gap-4 mb-10">
-        <span class="font-mono text-xs text-rice/40">Sectors</span>
+        <span class="font-mono text-xs text-rice/40">Mega projects</span>
         <h2 class="font-display font-extrabold text-3xl md:text-4xl">
-          Thirteen areas of focus
-          <span lang="ml" class="block font-mal text-base text-rice/45 mt-2">പതിമൂന്ന് മേഖലകൾ</span>
+          The five biggest line items
+          <span lang="ml" class="block font-mal text-base text-rice/45 mt-2">
+            ഏറ്റവും വലിയ പദ്ധതികൾ
+          </span>
         </h2>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {focus.map((f, i) => (
+        {focus.megaProjects.map((p, i) => (
           <div
-            class="reveal rounded-2xl p-6 bg-ink3/40 border border-rice/10 transition-colors duration-400 hover:border-rice/25"
-            style={`--d:${i * 70}ms`}
+            class="reveal glass glass-hover rounded-2xl p-6 flex flex-col"
+            style={`--d:${i * 90}ms`}
+            x-data="{ open: false }"
           >
-            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/35 mb-3">{f.code}</p>
-            <p class="font-display font-bold text-lg">{f.title}</p>
-            <p lang="ml" class="font-mal text-sm text-rice/45 mt-1">{f.ml}</p>
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/35 mb-3">{p.sector}</p>
+            <p class="font-display font-bold leading-snug">{p.nameEn}</p>
+            <p lang="ml" class="font-mal text-sm text-rice/45 mt-1">{p.nameMl}</p>
+            <p class="font-mono text-lg text-rice/80 mt-4">{inr(p.fundTotal)}</p>
+
+            <button
+              type="button"
+              @click="open = !open"
+              class="mt-4 self-start font-mono text-[10px] tracking-[0.18em] uppercase text-rice/40 hover:text-rice/70 outline-hidden focus-visible:outline-2 focus-visible:outline-turmeric focus-visible:outline-offset-2 focus-visible:rounded"
+              :aria-expanded="open"
+            >
+              <span x-text="open ? 'Hide funding sources −' : 'View funding sources +'"></span>
+            </button>
+
+            <div x-show="open" x-cloak x-transition class="mt-4 pt-4 border-t border-rice/10 space-y-2">
+              {p.fundBreakdown.map((b) => (
+                <div class="flex items-start justify-between gap-3 text-xs">
+                  <span class="text-rice/50">{b.source}</span>
+                  <span class="font-mono text-rice/70 whitespace-nowrap">{inr(b.amount)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 pb-28">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-ink3)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">By sector</span>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl">
+          Every sector, by budget
+          <span lang="ml" class="block font-mal text-base text-rice/45 mt-2">മേഖല തിരിച്ച്</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6">
+        {focus.sectors.map((sector, si) => (
+          <div class="reveal rounded-2xl p-6 md:p-8 bg-ink3/40 border border-rice/10" style={`--d:${si * 70}ms`}>
+            <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-1">
+              <span class="font-mono text-[10px] text-rice/35">{sector.code}</span>
+              <h3 class="font-display font-bold text-xl">{sector.title}</h3>
+              <span class="font-mono text-sm text-rice/60 ml-auto">{inr(sector.totalBudget)}</span>
+            </div>
+            <p lang="ml" class="font-mal text-sm text-rice/40 mb-1">{sector.ml}</p>
+            <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-rice/35 mb-6">
+              {sector.projectCount} {sector.projectCount === 1 ? "project" : "projects"}
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-3">
+              {sector.topProjects.map((p) => (
+                <div class="rounded-xl p-4 bg-ink2/60 border border-rice/10" x-data="{ open: false }">
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="text-sm font-medium">{p.nameEn}</p>
+                      <p lang="ml" class="font-mal text-xs text-rice/40 mt-1">{p.nameMl}</p>
+                    </div>
+                    <p class="font-mono text-xs text-rice/60 whitespace-nowrap">{inr(p.fundTotal)}</p>
+                  </div>
+
+                  <button
+                    type="button"
+                    @click="open = !open"
+                    class="mt-3 font-mono text-[10px] tracking-[0.15em] uppercase text-rice/35 hover:text-rice/65 outline-hidden focus-visible:outline-2 focus-visible:outline-turmeric focus-visible:outline-offset-2 focus-visible:rounded"
+                    :aria-expanded="open"
+                  >
+                    <span x-text="open ? 'Hide details −' : 'View details +'"></span>
+                  </button>
+
+                  <div x-show="open" x-cloak x-transition class="mt-3 pt-3 border-t border-rice/10 space-y-1.5">
+                    {p.fundBreakdown.map((b) => (
+                      <div class="flex items-start justify-between gap-3 text-[11px]">
+                        <span class="text-rice/45">{b.source}</span>
+                        <span class="font-mono text-rice/65 whitespace-nowrap">{inr(b.amount)}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>

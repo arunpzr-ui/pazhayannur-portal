@@ -1,15 +1,1131 @@
-[
-  { "code": "F / 01", "slug": "agriculture", "title": "Agriculture", "ml": "കൃഷി" },
-  { "code": "F / 02", "slug": "animal-husbandry", "title": "Animal husbandry", "ml": "മൃഗസംരക്ഷണം" },
-  { "code": "F / 03", "slug": "sanitation-waste", "title": "Sanitation & waste", "ml": "ശുചിത്വവും മാലിന്യ സംസ്കരണവും" },
-  { "code": "F / 04", "slug": "drinking-water", "title": "Drinking water", "ml": "കുടിവെള്ളം" },
-  { "code": "F / 05", "slug": "good-governance", "title": "Good governance", "ml": "സദ്ഭരണം" },
-  { "code": "F / 06", "slug": "public-works", "title": "Public works", "ml": "പൊതുമരാമത്ത്" },
-  { "code": "F / 07", "slug": "sc-st-development", "title": "SC & ST development", "ml": "പട്ടികജാതി — പട്ടികവർഗ വികസനം" },
-  { "code": "F / 08", "slug": "disaster-management", "title": "Disaster management", "ml": "ദുരന്തനിവാരണം" },
-  { "code": "F / 09", "slug": "local-economic-development", "title": "Local economic development", "ml": "തദ്ദേശീയ സാമ്പത്തിക വികസനം" },
-  { "code": "F / 10", "slug": "education-art-culture", "title": "Education, art & culture", "ml": "വിദ്യാഭ്യാസം, കല, സംസ്കാരം" },
-  { "code": "F / 11", "slug": "poverty-alleviation", "title": "Poverty alleviation", "ml": "ദാരിദ്ര്യ ലഘൂകരണം" },
-  { "code": "F / 12", "slug": "social-justice", "title": "Social justice", "ml": "സാമൂഹ്യനീതി" },
-  { "code": "F / 13", "slug": "women-child-development", "title": "Women & child development", "ml": "വനിതാ — ശിശു വികസനം" }
-]
+{
+  "year": "2026-27",
+  "totalBudget": 234747875,
+  "totalProjects": 244,
+  "megaProjects": [
+    {
+      "nameEn": "LIFE MISSION HOUSING PROJECT CONTRIBUTION GENERAL",
+      "nameMl": "ലൈഫ് മിഷ൯ പദ്ദതി വിഹിതം മാറ്റി വയ്ക്കൽ ജനറൽ",
+      "sector": "Housing & Electrification",
+      "fundTotal": 34000000,
+      "fundBreakdown": [
+        {
+          "source": "Development Fund(General)",
+          "amount": 8000000
+        },
+        {
+          "source": "State Sponsored Scheme Fund",
+          "amount": 10000000
+        },
+        {
+          "source": "Loans from Financial Institutions",
+          "amount": 10000000
+        },
+        {
+          "source": "Receipts from other LSG's (Block Panchayats)",
+          "amount": 2000000
+        },
+        {
+          "source": "Receipts from other LSG's (District Panchayat)",
+          "amount": 4000000
+        }
+      ]
+    },
+    {
+      "nameEn": "HOUSE UPGRADATION SC",
+      "nameMl": "വാസയോഗ്യമല്ലാത്ത വീടുകള് വാസയോഗ്യമാക്കൽ എ സ്സി",
+      "sector": "Housing & Electrification",
+      "fundTotal": 7500000,
+      "fundBreakdown": [
+        {
+          "source": "Development Fund(S.C.P)",
+          "amount": 7500000
+        }
+      ]
+    },
+    {
+      "nameEn": "PMAY CONTRIBUTION",
+      "nameMl": "പി എം എ വൈ വിഹിതം നൽക്കൽ",
+      "sector": "Housing & Electrification",
+      "fundTotal": 7000000,
+      "fundBreakdown": [
+        {
+          "source": "Development Fund(General)",
+          "amount": 7000000
+        }
+      ]
+    },
+    {
+      "nameEn": "PADDY DEVELOPMENT SCHEME",
+      "nameMl": "സമഗ്ര നെല്‍കൃഷി വികസനം",
+      "sector": "Agriculture",
+      "fundTotal": 6932000,
+      "fundBreakdown": [
+        {
+          "source": "Development Fund(General)",
+          "amount": 4000000
+        },
+        {
+          "source": "Beneficiary Contribution/Donations (Remitted to the Panchayat)",
+          "amount": 432000
+        },
+        {
+          "source": "Receipts from other LSG's (Block Panchayats)",
+          "amount": 1500000
+        },
+        {
+          "source": "Receipts from other LSG's (District Panchayat)",
+          "amount": 1000000
+        }
+      ]
+    },
+    {
+      "nameEn": "STUDY ROOM FOR SC STUDENTS",
+      "nameMl": "എ സ്സി വിദ്യാ൪ത്ഥികള്ക്കുളള പഠനമുറി",
+      "sector": "Education, Arts & Culture",
+      "fundTotal": 6600000,
+      "fundBreakdown": [
+        {
+          "source": "Development Fund(S.C.P)",
+          "amount": 6600000
+        }
+      ]
+    }
+  ],
+  "sectors": [
+    {
+      "code": "F / 01",
+      "slug": "housing-electrification",
+      "title": "Housing & Electrification",
+      "ml": "പാർപ്പിടവും വൈദ്യുതീകരണവും",
+      "projectCount": 10,
+      "totalBudget": 65137500,
+      "topProjects": [
+        {
+          "nameEn": "LIFE MISSION HOUSING PROJECT CONTRIBUTION GENERAL",
+          "nameMl": "ലൈഫ് മിഷ൯ പദ്ദതി വിഹിതം മാറ്റി വയ്ക്കൽ ജനറൽ",
+          "fundTotal": 34000000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 8000000
+            },
+            {
+              "source": "State Sponsored Scheme Fund",
+              "amount": 10000000
+            },
+            {
+              "source": "Loans from Financial Institutions",
+              "amount": 10000000
+            },
+            {
+              "source": "Receipts from other LSG's (Block Panchayats)",
+              "amount": 2000000
+            },
+            {
+              "source": "Receipts from other LSG's (District Panchayat)",
+              "amount": 4000000
+            }
+          ]
+        },
+        {
+          "nameEn": "HOUSE UPGRADATION SC",
+          "nameMl": "വാസയോഗ്യമല്ലാത്ത വീടുകള് വാസയോഗ്യമാക്കൽ എ സ്സി",
+          "fundTotal": 7500000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(S.C.P)",
+              "amount": 7500000
+            }
+          ]
+        },
+        {
+          "nameEn": "PMAY CONTRIBUTION",
+          "nameMl": "പി എം എ വൈ വിഹിതം നൽക്കൽ",
+          "fundTotal": 7000000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 7000000
+            }
+          ]
+        },
+        {
+          "nameEn": "HOUSE UPGRADATION GENERAL",
+          "nameMl": "വാസയോഗ്യമല്ലാത്ത വീടുകള് വാസയോഗ്യമാക്കൽ ജനറൽ",
+          "fundTotal": 5000000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 5000000
+            }
+          ]
+        },
+        {
+          "nameEn": "HOUSE UPGRADATION SC",
+          "nameMl": "വാസയോഗ്യമല്ലാത്ത വീടൂകൾ വാസയോഗ്യമാക്കല്‍ എസ്സി",
+          "fundTotal": 4912500,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1528856
+            },
+            {
+              "source": "Development Fund(S.C.P)",
+              "amount": 1809513
+            },
+            {
+              "source": "Own Fund",
+              "amount": 1574131
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "F / 02",
+      "slug": "transportation",
+      "title": "Transportation & Roads",
+      "ml": "ഗതാഗതം",
+      "projectCount": 103,
+      "totalBudget": 56101749,
+      "topProjects": [
+        {
+          "nameEn": "Pralayanantharam thodukalude punarudharanam",
+          "nameMl": "പ്രളയാനന്തരം തോടുകളുടെ പുനരുദ്ധാരണം",
+          "fundTotal": 1800000,
+          "fundBreakdown": [
+            {
+              "source": "Maintenance Fund - Non-road Assets",
+              "amount": 1800000
+            }
+          ]
+        },
+        {
+          "nameEn": "Pralayanantharam thodu samrakshanam",
+          "nameMl": "പ്രളയാനന്തരം തോട് സംരക്ഷണം",
+          "fundTotal": 1697972,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 1697972
+            }
+          ]
+        },
+        {
+          "nameEn": "Kodathur Sarojani Industries area side protection Canal palam",
+          "nameMl": "കോടത്തുര്‍ കനാല്‍ സരോജിനി ഇന്‍ടസ്ട്രീസിന്‍റെ ഭാഗം സൈഡ് പ്രോട്ടക്ഷന്‍ കനാല്‍ പാലം",
+          "fundTotal": 1495000,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 1495000
+            }
+          ]
+        },
+        {
+          "nameEn": "Aanachal road culvert punarudharanam",
+          "nameMl": "ആനച്ചാൽ റോഡ് കൽവർട്ട് പുനരുദ്ധാരണം",
+          "fundTotal": 1300000,
+          "fundBreakdown": [
+            {
+              "source": "Maintenance Fund - Road Assets",
+              "amount": 1300000
+            }
+          ]
+        },
+        {
+          "nameEn": "Kilinikkadavu canal road",
+          "nameMl": "കിളിനിക്കടവ് കനാൽ റോഡ്",
+          "fundTotal": 1200000,
+          "fundBreakdown": [
+            {
+              "source": "Maintenance Fund - Road Assets",
+              "amount": 1200000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "F / 03",
+      "slug": "animal-husbandry",
+      "title": "Animal Husbandry, Dairy & Fisheries",
+      "ml": "മൃഗസംരക്ഷണവും ക്ഷീരവികസനവും",
+      "projectCount": 11,
+      "totalBudget": 14780740,
+      "topProjects": [
+        {
+          "nameEn": "SPECIAL LIVESTOCK BREEDING PROGRAMME CAP",
+          "nameMl": "പ്രതേക കന്നുകുട്ടി പരിപാലന പദ്ധതി",
+          "fundTotal": 5000000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1250000
+            },
+            {
+              "source": "State Sponsored Scheme Fund",
+              "amount": 1250000
+            },
+            {
+              "source": "Beneficiary Contribution (Direct Expenditure)",
+              "amount": 2500000
+            }
+          ]
+        },
+        {
+          "nameEn": "Milk Susidy For Milk Farmers",
+          "nameMl": "ഷീരസംഘങ്ങളിൽ പാലളക്കുന്ന കർഷകർക്ക് പാലിന് സബ്സിഡി",
+          "fundTotal": 2500000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1500000
+            },
+            {
+              "source": "Receipts from other LSG's (District Panchayat)",
+              "amount": 1000000
+            }
+          ]
+        },
+        {
+          "nameEn": "COW REARING SCHEME FOR WIDOWS WOMEN HEAD OF THE FAMILY",
+          "nameMl": "വിധവകള്‍ നിരാസ്കരായരായ വനിതകള്‍ എന്നീ വിഭാഗത്തില്‍ പെട്ടവര്‍ക്ക് കറവ പശുവിതരണം",
+          "fundTotal": 2400000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1200000
+            },
+            {
+              "source": "Loans from Financial Institutions",
+              "amount": 1200000
+            }
+          ]
+        },
+        {
+          "nameEn": "Milk subsidy for dairy farmers",
+          "nameMl": "ക്ഷീര സഹകരണ സംഘങ്ങളിൽ പാൽ അളക്കുന്ന കർഷകർക്ക് പാലിന് സബ്‌സിഡി",
+          "fundTotal": 2075740,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1075740
+            },
+            {
+              "source": "Receipts from other LSG's (District Panchayat)",
+              "amount": 1000000
+            }
+          ]
+        },
+        {
+          "nameEn": "DISTRIBUTION OF EWE LAMBS",
+          "nameMl": "പട്ടിക വര്‍ഗ്ഗ വിഭാഗക്കാര്‍ക്ക് പെണ്ണാട് വിതരണം",
+          "fundTotal": 945000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(T.S.P)",
+              "amount": 930000
+            },
+            {
+              "source": "Own Fund",
+              "amount": 15000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "F / 04",
+      "slug": "public-works",
+      "title": "Public Works & Buildings",
+      "ml": "പൊതുമരാമത്ത്",
+      "projectCount": 11,
+      "totalBudget": 13882099,
+      "topProjects": [
+        {
+          "nameEn": "Land Aqusition For Elanad Bus Stand",
+          "nameMl": "എളനാട് ബസ് സ്റ്റാന്റ് സ്ഥലം ഏറ്റെടുക്കൽ",
+          "fundTotal": 6031671,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 6031671
+            }
+          ]
+        },
+        {
+          "nameEn": "Ikkalamkund unnathi samskarika nilayam nirmmanam",
+          "nameMl": "ഇക്കളാ൦കുണ്ട് ഉന്നതിസാംസ്‌കാരിക നിലയം നിര്‍മ്മാണം",
+          "fundTotal": 1004743,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1004743
+            }
+          ]
+        },
+        {
+          "nameEn": "Haritha Keral Mission - Maintenance of Thodu",
+          "nameMl": "ഹരിത കേരള മിഷന്‍ - തോടുകളുടെ പുനരുദ്ധാരണം",
+          "fundTotal": 1000000,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 1000000
+            }
+          ]
+        },
+        {
+          "nameEn": "Construction of ramp at paddy field",
+          "nameMl": "പാടശേഖരങ്ങളില്‍ റാമ്പ് നിര്‍മ്മാണം",
+          "fundTotal": 1000000,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 1000000
+            }
+          ]
+        },
+        {
+          "nameEn": "ACQUISITION OF LAND FOR PAZHAYANNUR TOWN OPEN AIR AUDITORIUM",
+          "nameMl": "പഴയന്നൂര്‍ ടൌണ്‍ ഓപ്പണ്‍ ഓഡിറ്റോറിയം സ്ഥലം എറ്റെടുക്കല്‍",
+          "fundTotal": 1000000,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 1000000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "F / 05",
+      "slug": "education-art-culture",
+      "title": "Education, Arts & Culture",
+      "ml": "വിദ്യാഭ്യാസം, കല, സംസ്കാരം",
+      "projectCount": 13,
+      "totalBudget": 12420356,
+      "topProjects": [
+        {
+          "nameEn": "STUDY ROOM FOR SC STUDENTS",
+          "nameMl": "എ സ്സി വിദ്യാ൪ത്ഥികള്ക്കുളള പഠനമുറി",
+          "fundTotal": 6600000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(S.C.P)",
+              "amount": 6600000
+            }
+          ]
+        },
+        {
+          "nameEn": "LAPTOP FOR PROFESSIONAL SC STUDENTS",
+          "nameMl": "പ്രൊഫഷണല്‍ കോഴ്സിന് പഠിക്കുന്ന പട്ടികജാതി വിദ്യാര്‍ത്ഥികള്‍ക്ക് ലാപ്ടോപ്പ്",
+          "fundTotal": 990000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(S.C.P)",
+              "amount": 990000
+            }
+          ]
+        },
+        {
+          "nameEn": "FURNITURE FOR S C STUDENTS",
+          "nameMl": "പട്ടിക ജാതി വിദ്യാര്‍ത്ഥികള്‍ക്ക് ഫര്‍ണീച്ചര്‍",
+          "fundTotal": 800000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(S.C.P)",
+              "amount": 800000
+            }
+          ]
+        },
+        {
+          "nameEn": "Furniture For SC students",
+          "nameMl": "പട്ടികജാതി വിദ്യാർത്ഥികൾക്ക് ഫർണീച്ചർ",
+          "fundTotal": 800000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(S.C.P)",
+              "amount": 800000
+            }
+          ]
+        },
+        {
+          "nameEn": "GLPS maintenance",
+          "nameMl": "ജി എല്‍ പി എസ് മെയിന്‍ന്‍റനന്‍സ്",
+          "fundTotal": 760000,
+          "fundBreakdown": [
+            {
+              "source": "Maintenance Fund - Non-road Assets",
+              "amount": 760000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "F / 06",
+      "slug": "agriculture",
+      "title": "Agriculture",
+      "ml": "കൃഷി",
+      "projectCount": 10,
+      "totalBudget": 12367800,
+      "topProjects": [
+        {
+          "nameEn": "PADDY DEVELOPMENT SCHEME",
+          "nameMl": "സമഗ്ര നെല്‍കൃഷി വികസനം",
+          "fundTotal": 6932000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 4000000
+            },
+            {
+              "source": "Beneficiary Contribution/Donations (Remitted to the Panchayat)",
+              "amount": 432000
+            },
+            {
+              "source": "Receipts from other LSG's (Block Panchayats)",
+              "amount": 1500000
+            },
+            {
+              "source": "Receipts from other LSG's (District Panchayat)",
+              "amount": 1000000
+            }
+          ]
+        },
+        {
+          "nameEn": "PADDY DEVELOPMENT SCHEME",
+          "nameMl": "സമഗ്ര നെല്‍കൃഷി വികസനം",
+          "fundTotal": 2370519,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1225519
+            },
+            {
+              "source": "Beneficiary Contribution/Donations (Remitted to the Panchayat)",
+              "amount": 0
+            },
+            {
+              "source": "Receipts from other LSG's (Block Panchayats)",
+              "amount": 500000
+            },
+            {
+              "source": "Receipts from other LSG's (District Panchayat)",
+              "amount": 645000
+            }
+          ]
+        },
+        {
+          "nameEn": "Solar fencing in farm plots",
+          "nameMl": "കൃഷിയിടങ്ങളിൽ സോളാർ വേലി",
+          "fundTotal": 1200000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 600000
+            },
+            {
+              "source": "Beneficiary Contribution (Direct Expenditure)",
+              "amount": 600000
+            }
+          ]
+        },
+        {
+          "nameEn": "Developement of vegetables cultivation",
+          "nameMl": "സമഗ്ര പച്ചക്കറി വികസനം",
+          "fundTotal": 700000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 700000
+            }
+          ]
+        },
+        {
+          "nameEn": "SUPPLY OF LIME TO VEGETABLE FARMERS",
+          "nameMl": "പച്ചക്കറി കര്‍ഷകര്‍ക്ക് കുമ്മായം വിതരണം",
+          "fundTotal": 402781,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 250002
+            },
+            {
+              "source": "Beneficiary Contribution (Direct Expenditure)",
+              "amount": 152779
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "F / 07",
+      "slug": "drinking-water",
+      "title": "Drinking water",
+      "ml": "കുടിവെള്ളം",
+      "projectCount": 18,
+      "totalBudget": 12214436,
+      "topProjects": [
+        {
+          "nameEn": "Renovation of Public Ponds",
+          "nameMl": "പൊതു കുളങ്ങളുടെ പുനരുദ്ധാരണം",
+          "fundTotal": 1088500,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(CFC tied Grant )",
+              "amount": 1088500
+            }
+          ]
+        },
+        {
+          "nameEn": "Haritha Kerala Mission - Maintenance of Public well",
+          "nameMl": "ഹരിത കേരള മിഷന്‍ - പൊതുകിണറുകളുടെ പുനരുദ്ധാരണം",
+          "fundTotal": 1000000,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 1000000
+            }
+          ]
+        },
+        {
+          "nameEn": "Haritha Kerala Mission - Maintenance of Public ponds",
+          "nameMl": "ഹരിത കേരള മിഷന്‍ - പൊതു കുളങ്ങളുടെ പുനരുദ്ധാരണം",
+          "fundTotal": 1000000,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 1000000
+            }
+          ]
+        },
+        {
+          "nameEn": "Maintenance of various Drinking water scheme",
+          "nameMl": "കുടിവെള്ള പദ്ധതികളുടെ മെയിന്‍ന്‍റനന്‍സ്",
+          "fundTotal": 1000000,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 1000000
+            }
+          ]
+        },
+        {
+          "nameEn": "Athaniparambu Drinking water Scheme",
+          "nameMl": "അത്താണിപ്പറമ്പ് കുടിവെള്ള പദ്ധതി",
+          "fundTotal": 891413,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(CFC tied Grant )",
+              "amount": 891413
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "F / 08",
+      "slug": "local-economic-development",
+      "title": "Local Economic Development",
+      "ml": "തദ്ദേശീയ സാമ്പത്തിക വികസനം",
+      "projectCount": 5,
+      "totalBudget": 9640000,
+      "topProjects": [
+        {
+          "nameEn": "FUNDING FOR WOMEN WELFARE EMPOWERMENT VENTURE",
+          "nameMl": "വനിത സ്വയം തൊഴിൽ ഭക്ഷണ ഉത്പന്നങ്ങൽ നി൪മ്മാണ സംരഭത്തിനുളള ധനസഹായം",
+          "fundTotal": 5000000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 2500000
+            },
+            {
+              "source": "Loans from Financial Institutions",
+              "amount": 2500000
+            }
+          ]
+        },
+        {
+          "nameEn": "scooter for self employed womens",
+          "nameMl": "സ്വയം തൊഴില്‍ ചെയ്യുന്ന വനിതകള്‍ക്ക് സ്കൂട്ടര്‍",
+          "fundTotal": 2800000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1400000
+            },
+            {
+              "source": "Beneficiary Contribution (Direct Expenditure)",
+              "amount": 1400000
+            }
+          ]
+        },
+        {
+          "nameEn": "SUBSIDY FOR AUTO RIKSHAW WOMEN",
+          "nameMl": "വനിതകള്ക്ക് ഓട്ടോറിക്ഷക്ക് സബ്സിഡി",
+          "fundTotal": 1440000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1440000
+            }
+          ]
+        },
+        {
+          "nameEn": "VIJANA KERALAM DISTRICT PANCHAYATH SHARE",
+          "nameMl": "വിഞ്ജാന കേരളം ജില്ലാപഞ്ചായത്ത് വിഹിതം",
+          "fundTotal": 200000,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 200000
+            }
+          ]
+        },
+        {
+          "nameEn": "VIJANANA KERALAM",
+          "nameMl": "വിഞ്ജാന കേരളം",
+          "fundTotal": 200000,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 200000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "F / 09",
+      "slug": "social-welfare",
+      "title": "Social Welfare & Security",
+      "ml": "സാമൂഹ്യക്ഷേമം, സാമൂഹ്യസുരക്ഷിതത്വം",
+      "projectCount": 13,
+      "totalBudget": 8716200,
+      "topProjects": [
+        {
+          "nameEn": "Scholarship for Differently abled",
+          "nameMl": "ശാരീരിക-മാനസിക വെല്ലുവിളികള്‍ നേരിടുന്നവര്‍ക്കുള്ള സ്കോളര്‍ഷിപ്പും ബത്തയും",
+          "fundTotal": 2200000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1400000
+            },
+            {
+              "source": "Receipts from other LSG's (Block Panchayats)",
+              "amount": 600000
+            },
+            {
+              "source": "Receipts from other LSG's (District Panchayat)",
+              "amount": 200000
+            }
+          ]
+        },
+        {
+          "nameEn": "MARRIAGE FINANCE ASSISTANCE TO S C GIRLS",
+          "nameMl": "പട്ടികജാതി പെണ്‍കുട്ടികള്‍ക്ക് വിവാഹ ധനസഹായം",
+          "fundTotal": 1250000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(S.C.P)",
+              "amount": 1250000
+            }
+          ]
+        },
+        {
+          "nameEn": "FINANCE ASSISTANCE TO BUDS SCHOOL",
+          "nameMl": "ബഡ്സ് സ്കൂള്‍ പ്രവര്‍ത്തനങ്ങള്‍ക്ക് തുക കൈമാറല്‍",
+          "fundTotal": 1250000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1150000
+            },
+            {
+              "source": "Own Fund",
+              "amount": 100000
+            }
+          ]
+        },
+        {
+          "nameEn": "Equipments for elderly",
+          "nameMl": "വയോജനങ്ങൾക്ക് സഹായ ഉപകരണങ്ങൾ നൽകൽ",
+          "fundTotal": 800000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 800000
+            }
+          ]
+        },
+        {
+          "nameEn": "Scholarship for Differently Abled Students",
+          "nameMl": "ശാരിരീക മാനസിക വെല്ലുവിളിനേരിടു്ന്ന കുട്ടികൾക്ക് സ്കോളര്‍ഷിപ്പ്",
+          "fundTotal": 531200,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 156200
+            },
+            {
+              "source": "Receipts from other LSG's (Block Panchayats)",
+              "amount": 175000
+            },
+            {
+              "source": "Receipts from other LSG's (District Panchayat)",
+              "amount": 200000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "F / 10",
+      "slug": "energy",
+      "title": "Energy & Electrification",
+      "ml": "ഊർജ്ജവും വൈദ്യുതീകരണവും",
+      "projectCount": 7,
+      "totalBudget": 8000000,
+      "topProjects": [
+        {
+          "nameEn": "Purchase Of Street Lights",
+          "nameMl": "സ്ട്രീറ്റ് ലൈറ്റുകളുടെ വാങ്ങൽ",
+          "fundTotal": 2000000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(CFC Basic Grant )",
+              "amount": 2000000
+            }
+          ]
+        },
+        {
+          "nameEn": "street main",
+          "nameMl": "സ്ട്രീറ്റ് മെയിൻ വലിക്കൽ",
+          "fundTotal": 2000000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(CFC Basic Grant )",
+              "amount": 2000000
+            }
+          ]
+        },
+        {
+          "nameEn": "PURCHASE OF STREET LIGHT",
+          "nameMl": "സ്ട്രീറ്റ് ലൈറ്റുകളുടെ വാങ്ങല്‍",
+          "fundTotal": 1000000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1000000
+            }
+          ]
+        },
+        {
+          "nameEn": "Hybrid Solar Plant For Homeo Dispensary",
+          "nameMl": "ഹോമിയോ ഡിസ്പെൻസറിയിൽ ഹൈബ്രിഡ് സോളാർ പ്ലാന്‍റ്",
+          "fundTotal": 850000,
+          "fundBreakdown": [
+            {
+              "source": "Maintenance Fund - Non-road Assets",
+              "amount": 850000
+            }
+          ]
+        },
+        {
+          "nameEn": "Standby UPS For 20 KV Solar plant",
+          "nameMl": "പഞ്ചായത്തിലെ 20 കെ വി സോളാർപ്ലാന്‍റിന് സ്റ്റാന്‍റ് ബൈ യു പി എസ്",
+          "fundTotal": 750000,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 750000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "F / 11",
+      "slug": "women-child-development",
+      "title": "Women & Child Development",
+      "ml": "വനിതാ — ശിശു വികസനം",
+      "projectCount": 5,
+      "totalBudget": 7068697,
+      "topProjects": [
+        {
+          "nameEn": "Supplementary Nutrition Programme - General",
+          "nameMl": "അനുപൂരകപോഷകഹാരം -ജനറല്‍",
+          "fundTotal": 3200000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1000000
+            },
+            {
+              "source": "Centrally Sponsored Scheme Fund",
+              "amount": 2200000
+            }
+          ]
+        },
+        {
+          "nameEn": "Maintenance of anganwadies",
+          "nameMl": "അംഗന്‍വാടികളുടെ മെയിന്‍ന്‍റനന്‍സ്",
+          "fundTotal": 1500000,
+          "fundBreakdown": [
+            {
+              "source": "Maintenance Fund - Non-road Assets",
+              "amount": 1500000
+            }
+          ]
+        },
+        {
+          "nameEn": "PURCHASE OF FURNITURES FOR ANGANWADIES",
+          "nameMl": "അംഗൻവാടികൾക്ക് ഫർണീച്ചർ വാങ്ങൽ",
+          "fundTotal": 995000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 995000
+            }
+          ]
+        },
+        {
+          "nameEn": "Toys For Anganvadies",
+          "nameMl": "അംഗൻവാടികൾക്ക് കളികോപ്പ് മുതലായവയുടെ വാങ്ങൽ",
+          "fundTotal": 973697,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 973697
+            }
+          ]
+        },
+        {
+          "nameEn": "Anganwadi Maintenance poortheekaranam",
+          "nameMl": "അംഗൻവാടി മെയിന്റനൻസ് പൂർത്തീകരണം",
+          "fundTotal": 400000,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 400000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "F / 12",
+      "slug": "sanitation-waste",
+      "title": "Sanitation & Waste Management",
+      "ml": "ശുചിത്വവും മാലിന്യ സംസ്കരണവും",
+      "projectCount": 8,
+      "totalBudget": 6786300,
+      "topProjects": [
+        {
+          "nameEn": "Pazhayannur Town Footpath Renovation",
+          "nameMl": "പഴയന്നൂര്‍ ടൌണ്‍ നടപാത നവീകരണം",
+          "fundTotal": 1672500,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(CFC tied Grant )",
+              "amount": 1672500
+            }
+          ]
+        },
+        {
+          "nameEn": "Instalation of shredding machine and related equipments of solid waste treatment plant",
+          "nameMl": "ഖരമാലിന്യ സംസ്കരണ പ്ലാന്റില്‍ ഷ്രഡ്ഡിംഗ് മെഷീന്‍അനുബന്ധ ഉപകരണങ്ങള്‍ സ്ഥാപിക്കല്‍",
+          "fundTotal": 1000000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(CFC tied Grant )",
+              "amount": 1000000
+            }
+          ]
+        },
+        {
+          "nameEn": "Establishment of Mini M C F",
+          "nameMl": "മിനി എം സി എഫ്",
+          "fundTotal": 935000,
+          "fundBreakdown": [
+            {
+              "source": "Centrally Sponsored Scheme Fund",
+              "amount": 385000
+            },
+            {
+              "source": "Own Fund",
+              "amount": 385000
+            },
+            {
+              "source": "Voluntary Contributions/Donations",
+              "amount": 165000
+            }
+          ]
+        },
+        {
+          "nameEn": "Purchase Of new Vehicle for Waste managment",
+          "nameMl": "മാലിന്യസംസ്കരണം പഞ്ചായത്തിന് പുതിയവാഹനം വാങ്ങൽ",
+          "fundTotal": 800000,
+          "fundBreakdown": [
+            {
+              "source": "Voluntary Contributions/Donations",
+              "amount": 800000
+            }
+          ]
+        },
+        {
+          "nameEn": "Storage facilities to Solid waste processing unit",
+          "nameMl": "ഖരമാലിന്യ സംസ്കരണ പ്ലാന്റില്‍ സ്റ്റോറേജ് സംവിധാനം",
+          "fundTotal": 800000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(CFC tied Grant )",
+              "amount": 800000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "F / 13",
+      "slug": "health",
+      "title": "Health",
+      "ml": "ആരോഗ്യം",
+      "projectCount": 12,
+      "totalBudget": 5419880,
+      "topProjects": [
+        {
+          "nameEn": "HONARARIUM TO FAMILY HEALTH CENTRE DOCTOR AND PARAMEDICAL STAFF",
+          "nameMl": "കുടുംബാരോഗ്യ കേന്ദ്രത്തില്‍ ഡോക്ടര്‍ പാരമെഡിക്കല്‍ സ്റ്റാഫ്‌ എന്നിവര്‍ക്ക് വേതനം നല്‍കല്‍",
+          "fundTotal": 1352880,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1252880
+            },
+            {
+              "source": "Own Fund",
+              "amount": 100000
+            }
+          ]
+        },
+        {
+          "nameEn": "PAIN AND PALLIATIVE CARE",
+          "nameMl": "സാന്ത്വന പരിചരണം",
+          "fundTotal": 1200000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 1200000
+            }
+          ]
+        },
+        {
+          "nameEn": "Purchase of medicines for ayurveda dispensary",
+          "nameMl": "ആയൂർവേദ ഡിസ്പെൻസറിക്ക് മരുന്ന് വാങ്ങൽ",
+          "fundTotal": 1000000,
+          "fundBreakdown": [
+            {
+              "source": "Maintenance Fund - Non-road Assets",
+              "amount": 1000000
+            }
+          ]
+        },
+        {
+          "nameEn": "PURCHASE OF MEDICINE TO FHC ELANAD",
+          "nameMl": "എളനാട് എഫ് എച്ച് സി യിലേക്ക് മരുന്നു വാങ്ങല്",
+          "fundTotal": 800000,
+          "fundBreakdown": [
+            {
+              "source": "Maintenance Fund - Non-road Assets",
+              "amount": 800000
+            }
+          ]
+        },
+        {
+          "nameEn": "Purchase of Medicine for Homeo Dispensary",
+          "nameMl": "ഹോമിയോ ഡിസ്പെൻസറിയിലേക്ക് മരുന്ന് വാങ്ങൽ",
+          "fundTotal": 400000,
+          "fundBreakdown": [
+            {
+              "source": "Maintenance Fund - Non-road Assets",
+              "amount": 400000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "F / 14",
+      "slug": "good-governance",
+      "title": "Good Governance",
+      "ml": "സദ്ഭരണം",
+      "projectCount": 18,
+      "totalBudget": 2212118,
+      "topProjects": [
+        {
+          "nameEn": "AMC for Computers",
+          "nameMl": "പഞ്ചായത്തിലെ കംപ്യൂട്ടറുകളുടെ വാർഷിക എ എം സി",
+          "fundTotal": 300000,
+          "fundBreakdown": [
+            {
+              "source": "Own Fund",
+              "amount": 300000
+            }
+          ]
+        },
+        {
+          "nameEn": "AMC For Computers",
+          "nameMl": "പഞ്ചായത്തിലെ കംപ്യൂട്ടറുകളുടെ എ എം സി",
+          "fundTotal": 300000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(CFC Basic Grant )",
+              "amount": 300000
+            }
+          ]
+        },
+        {
+          "nameEn": "ADMINISTRATIVE EXPENSES FOR FHC",
+          "nameMl": "എളനാട് എഫ് എച്ച് സി അഡ്മിനിസ്ട്രറ്റിവ് എക്സെ്പന്സ്",
+          "fundTotal": 250000,
+          "fundBreakdown": [
+            {
+              "source": "Maintenance Fund - Non-road Assets",
+              "amount": 250000
+            }
+          ]
+        },
+        {
+          "nameEn": "Administrative Expensives of ICDS Office",
+          "nameMl": "ഐ സി ഡി എസ് ഓഫീസിലെ ദൈനംദിന ചിലവുകള്‍",
+          "fundTotal": 200000,
+          "fundBreakdown": [
+            {
+              "source": "Maintenance Fund - Non-road Assets",
+              "amount": 200000
+            }
+          ]
+        },
+        {
+          "nameEn": "I K M SHARE",
+          "nameMl": "ഐ കെ എം ഗ്രാമപഞ്ചായത്ത് വിഹിതം നല്‍കല്‍",
+          "fundTotal": 192000,
+          "fundBreakdown": [
+            {
+              "source": "Development Fund(General)",
+              "amount": 192000
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

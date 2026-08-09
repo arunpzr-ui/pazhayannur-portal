@@ -25,6 +25,7 @@
     "esbuild@0.28.2": true
   },
   "devDependencies": {
-    "@types/alpinejs": "^3.13.11"
+    "@types/alpinejs": "^3.13.11",
+    "xlsx": "^0.18.5"
   }
 }

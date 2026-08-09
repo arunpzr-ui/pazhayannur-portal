@@ -193,23 +193,23 @@ const currentCommittee = administration.timeline.at(-1)!;
           <span lang="ml" class="block font-mal text-lg text-rice/45 mt-2">വികസന കാഴ്ചപ്പാട്</span>
         </h2>
       </div>
-      <div class="flex flex-wrap gap-3 max-w-4xl">
-        {focus.map((f, i) => (
-          <div
-            class="reveal glass glass-hover rounded-full px-5 py-3 flex items-center gap-3"
-            style={`--d:${i * 60}ms`}
-          >
-            <span class="font-mono text-[10px] text-rice/35">{f.code}</span>
-            <span class="text-sm">{f.title}</span>
-            <span lang="ml" class="font-mal text-xs text-rice/40">{f.ml}</span>
-          </div>
-        ))}
+      <div class="reveal glass glass-hover rounded-2xl p-8 max-w-3xl" style="--d:110ms">
+        <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mb-3">
+          {focus.year} Annual Plan
+        </p>
+        <h3 class="font-display font-bold text-2xl mb-3">
+          ₹{(focus.totalBudget / 1e7).toFixed(2)} Crores
+        </h3>
+        <p class="text-rice/65 leading-relaxed">
+          {focus.totalProjects} projects across {focus.sectors.length} sectors, led by{" "}
+          {focus.sectors[0].title} and {focus.sectors[1].title}.
+        </p>
       </div>
       <a
         href="/focus"
         class="navlink inline-block mt-6 font-mono text-[11px] tracking-[0.18em] uppercase text-rice/60 hover:text-rice"
       >
-        See all thirteen sectors &rarr;
+        See the full development plan &rarr;
       </a>
     </div>
   </section>
