@@ -1,0 +1,205 @@
+---
+/**
+ * Base.astro — the single <head> and page shell for the portal.
+ *
+ * Every page wraps its content in this layout. It owns fonts, SEO
+ * metadata, structured data and the shared motion scripts.
+ */
+
+// Self-hosted fonts. Never load these from the Google Fonts CDN in
+// production: it is render-blocking, adds a third-party dependency,
+// and ships the full Malayalam family instead of the subset.
+import "@fontsource-variable/bricolage-grotesque";
+import "@fontsource-variable/instrument-sans";
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource/anek-malayalam/malayalam.css";
+import "@fontsource/anek-malayalam/latin.css";
+
+import "../styles/global.css";
+import town from "../data/town.json";
+
+interface Props {
+  /** Page title, without the site suffix. */
+  title: string;
+  /** Meta description, 150–160 characters. */
+  description?: string;
+  /** Path to an OG image in /public. Falls back to the site default. */
+  image?: string;
+  /** Document language. Use "ml" for fully Malayalam pages. */
+  lang?: "en" | "ml";
+  /** Set true on pages that should not be indexed. */
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = "A community-driven digital space bridging Pazhayannur's rich heritage with its future development. Thalappilly Taluk, Thrissur District, Kerala.",
+  image = "/og-default.jpg",
+  lang = "en",
+  noindex = false,
+} = Astro.props;
+
+const siteName = "Pazhayannur: The Community Portal";
+const fullTitle = `${title} · ${siteName}`;
+
+// Astro.site comes from `site` in astro.config.mjs. If canonical URLs
+// look wrong, that config value is almost always the cause.
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
+
+// Structured data. Pazhayannur is a place, not an organisation —
+// using Place lets search engines surface the map card correctly.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Place",
+  name: "Pazhayannur",
+  alternateName: "പഴയന്നൂർ",
+  description,
+  url: Astro.site?.toString(),
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Pazhayannur",
+    addressRegion: "Kerala",
+    addressCountry: "IN",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: town.coordinates.lat,
+    longitude: town.coordinates.lng,
+  },
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Open Graph — this is what renders when someone shares the
+         link on WhatsApp, which will be the main channel here. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === "ml" ? "ml_IN" : "en_IN"} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="theme-color" content="#100E0C" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-turmeric focus:text-ink focus:px-5 focus:py-3 focus:rounded-full focus:text-sm"
+    >
+      Skip to content
+    </a>
+
+    <slot name="nav" />
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <slot name="footer" />
+
+    <script>
+      /**
+       * Shared motion. Astro bundles and defers this automatically.
+       * Extract to src/scripts/motion.ts once it grows past this.
+       */
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // ---- Scroll reveal ----
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              revealObserver.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+      // ---- Count-up figures (supports decimals, e.g. 59.03 km²) ----
+      const format = (n: number, decimals: number) =>
+        n.toLocaleString("en-IN", {
+          minimumFractionDigits: decimals,
+          maximumFractionDigits: decimals,
+        });
+
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            const el = entry.target as HTMLElement;
+            const target = Number(el.dataset.count ?? 0);
+            const decimals = Number(el.dataset.decimals ?? 0);
+            const suffix = el.dataset.suffix ?? "";
+
+            if (reduce) {
+              el.textContent = format(target, decimals) + suffix;
+              counterObserver.unobserve(el);
+              continue;
+            }
+
+            const start = performance.now();
+            const duration = 1600;
+            const tick = (now: number) => {
+              const progress = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 4);
+              el.textContent = format(target * eased, decimals) + suffix;
+              if (progress < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+            counterObserver.unobserve(el);
+          }
+        },
+        { threshold: 0.5 },
+      );
+      document.querySelectorAll("[data-count]").forEach((el) => counterObserver.observe(el));
+
+      // ---- Navbar state + hero parallax ----
+      const nav = document.getElementById("nav");
+      const hero = document.getElementById("heroImg") as HTMLElement | null;
+      let ticking = false;
+
+      const onScroll = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const y = window.scrollY;
+          nav?.classList.toggle("nav-stuck", y > 40);
+          if (hero && !reduce && y < window.innerHeight) {
+            hero.style.transform = `translate3d(0, ${y * 0.22}px, 0)`;
+          }
+          ticking = false;
+        });
+      };
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    </script>
+  </body>
+</html>

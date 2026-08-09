@@ -1,0 +1,133 @@
+{
+  "name": "Pazhayannur",
+  "nameMl": "പഴയന്നൂർ",
+  "tagline": "കാലം മാറുന്നു, മണ്ണ് മാറുന്നില്ല",
+  "taglineGloss": "Times change; the soil does not.",
+  "description": "A community-driven digital space bridging Pazhayannur's rich heritage with its future development.",
+  "taluk": "Thalappilly",
+  "talukMl": "തലപ്പിള്ളി",
+  "district": "Thrissur",
+  "districtMl": "തൃശ്ശൂർ",
+  "state": "Kerala",
+  "pincode": "680587",
+  "coordinates": {
+    "lat": 10.7387,
+    "lng": 76.4231
+  },
+  "elevation": {
+    "min": 30,
+    "max": 220,
+    "unit": "m ASL"
+  },
+  "area": {
+    "value": 59.03,
+    "unit": "sq km"
+  },
+  "wards": 22,
+  "_wardsNote": "Figures list 22 wards; the 2025 committee is recorded as 24 members. Verify before launch and update both this value and WardGrid.astro.",
+  "population": {
+    "value": 10000,
+    "qualifier": "+",
+    "_note": "Supplied as 'over 10,000'. Replace with the verified census or panchayat figure."
+  },
+  "metrics": [
+    {
+      "value": 10000,
+      "suffix": "+",
+      "decimals": 0,
+      "label": "Residents",
+      "ml": "ജനസംഖ്യ",
+      "key": "rice"
+    },
+    {
+      "value": 59.03,
+      "suffix": "",
+      "decimals": 2,
+      "label": "Area sq km",
+      "ml": "വിസ്തീർണ്ണം",
+      "key": "vaka"
+    },
+    {
+      "value": 22,
+      "suffix": "",
+      "decimals": 0,
+      "label": "Wards",
+      "ml": "വാർഡുകൾ",
+      "key": "turmeric"
+    },
+    {
+      "value": 220,
+      "suffix": " m",
+      "decimals": 0,
+      "label": "Highest point",
+      "ml": "ഉയരം",
+      "key": "kumkum"
+    }
+  ],
+  "boundaries": [
+    {
+      "direction": "North",
+      "directionMl": "വടക്ക്",
+      "place": "Gayathripuzha",
+      "placeMl": "ഗായത്രിപ്പുഴ"
+    },
+    {
+      "direction": "South",
+      "directionMl": "തെക്ക്",
+      "place": "Reserve forest",
+      "placeMl": "റിസർവ് വനം"
+    },
+    {
+      "direction": "East",
+      "directionMl": "കിഴക്ക്",
+      "place": "Kannambra, Puthukkode",
+      "placeMl": "കണ്ണമ്പ്ര, പുതുക്കോട്"
+    },
+    {
+      "direction": "West",
+      "directionMl": "പടിഞ്ഞാറ്",
+      "place": "Chelakkara, Kondazhi",
+      "placeMl": "ചേലക്കര, കൊണ്ടാഴി"
+    }
+  ],
+  "terrain": [
+    {
+      "label": "Elevation",
+      "ml": "ഉയരം",
+      "value": "30 – 220 m ASL"
+    },
+    {
+      "label": "Soil",
+      "ml": "മണ്ണ്",
+      "value": "Rock, laterite, red and black soil, clay"
+    },
+    {
+      "label": "Plantation",
+      "ml": "തോട്ടങ്ങൾ",
+      "value": "Teak, rubber, coconut, areca nut"
+    },
+    {
+      "label": "Cultivation",
+      "ml": "കൃഷി",
+      "value": "Paddy fields and banana"
+    }
+  ],
+  "rainfall": {
+    "summary": "Low rainfall, sitting against the Palakkad border",
+    "summaryMl": "പാലക്കാട് അതിർത്തിയോട് ചേർന്ന് കിടക്കുന്നതിനാൽ മഴ കുറവ്"
+  },
+  "contact": {
+    "email": "hello@pazhayannur.com",
+    "emergency": "112"
+  },
+  "panchayatOffice": {
+    "_note": "Listed for residents' reference only. This portal is not the office and cannot act on its behalf.",
+    "name": "Pazhayannur Grama Panchayat",
+    "address": "Thalappilly Taluk, Thrissur 680587",
+    "hours": [
+      { "days": "Mon – Fri", "time": "10:00 – 17:00" },
+      { "days": "Sat", "time": "10:00 – 13:00" }
+    ],
+    "officialPortal": "https://lsgkerala.gov.in"
+  }
+}

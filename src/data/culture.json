@@ -1,0 +1,78 @@
+{
+  "intro": "Sitting on the Palakkad border, Pazhayannur carries both Dravidian and Malayalam inheritances — and has sent a remarkable number of people out into Kerala's arts.",
+  "introMl": "പാലക്കാട് അതിർത്തിയിൽ കിടക്കുന്ന പഴയന്നൂരിൽ ദ്രാവിഡ — മലയാള സംസ്കാരങ്ങൾ ഒരുപോലെ ഇഴചേർന്നിരിക്കുന്നു.",
+
+  "people": [
+    {
+      "name": "Palakkad Mani Iyer",
+      "ml": "പാലക്കാട് മണി അയ്യർ",
+      "role": "Mridangam maestro",
+      "roleMl": "മൃദംഗ വിദ്വാൻ",
+      "_verify": "Birthplace is usually recorded as Pazhayanur in Palakkad district. Confirm whether this is the same place before publishing."
+    },
+    {
+      "name": "Kalamandalam Thottassery Chinnammukutty Amma",
+      "ml": "കലാമണ്ഡലം തോട്ടശ്ശേരി ചിന്നമ്മുക്കുട്ടി അമ്മ",
+      "role": "Mohiniyattam",
+      "roleMl": "മോഹിനിയാട്ടം"
+    },
+    {
+      "name": "Ashitha",
+      "ml": "അഷിത",
+      "role": "Writer · born in Potta ward",
+      "roleMl": "എഴുത്തുകാരി · പോട്ട വാർഡ്"
+    },
+    {
+      "name": "Vipin Das",
+      "ml": "വിപിൻ ദാസ്",
+      "role": "Cinematographer",
+      "roleMl": "ഛായാഗ്രാഹകൻ"
+    },
+    {
+      "name": "Praseetha",
+      "ml": "പ്രസീത",
+      "role": "Child artist",
+      "roleMl": "ബാലതാരം"
+    }
+  ],
+
+  "highlights": [
+    {
+      "tag": "Meenam · Aarattu",
+      "title": "Pazhayannur Bhagavathy Temple",
+      "ml": "പഴയന്നൂർ ഭഗവതി ക്ഷേത്രം — മീനമാസ ആറാട്ട്",
+      "image": "culture-aarattu.jpg",
+      "imageAlt": "Placeholder — replace with a photograph of the Aarattu festival"
+    },
+    {
+      "tag": "Feast",
+      "title": "Vellarkulam Palli",
+      "ml": "വെള്ളാർകുളം പള്ളി",
+      "image": "culture-vellarkulam.jpg",
+      "imageAlt": "Placeholder — replace with a photograph of Vellarkulam Palli"
+    },
+    {
+      "tag": "Two inheritances",
+      "title": "Dravidian and Malayalam",
+      "ml": "ദ്രാവിഡ — മലയാള സംസ്കാരങ്ങളുടെ സംഗമം",
+      "image": "culture-inheritance.jpg",
+      "imageAlt": "Placeholder — replace with a photograph of local performing arts"
+    },
+    {
+      "tag": "Since 1912",
+      "title": "ALP School, Kunnathara",
+      "ml": "കുന്നത്തറ എ.എൽ.പി. സ്കൂൾ",
+      "image": "culture-alp-school.jpg",
+      "imageAlt": "Placeholder — replace with a photograph of the ALP School"
+    }
+  ],
+
+  "palette": [
+    { "ml": "അരിപ്പൊടി", "en": "Rice flour — white", "hex": "#F4F0E4", "token": "rice" },
+    { "ml": "മഞ്ഞൾ", "en": "Turmeric — yellow", "hex": "#E8A317", "token": "turmeric" },
+    { "ml": "വാകയില", "en": "Vaka leaf — green", "hex": "#2F7D5B", "token": "vaka" },
+    { "ml": "ചുവപ്പ്", "en": "Lime & turmeric — red", "hex": "#C3341B", "token": "kumkum" },
+    { "ml": "കരി", "en": "Charcoal — black", "hex": "#241F1A", "token": "ink3" }
+  ],
+  "paletteNote": "Every colour on this site is drawn from the five natural powders used in kalamezhuthu, the ritual floor drawing of Kerala's temple courtyards."
+}

@@ -1,0 +1,43 @@
+[
+  {
+    "slug": "origins",
+    "era": "Origins",
+    "eraMl": "പേരിന്റെ പിറവി",
+    "title": "Pazhayan, and a deity from Kashi",
+    "titleMl": "പഴയനും കാശിയിൽ നിന്നുള്ള ദേവിയും",
+    "summary": "Tradition holds that the town takes its name from Pazhayan, a toddy seller among the Kongans of Tanjore. The Kochi Maharaja is remembered as having brought the presiding deity here from Kashi.",
+    "summaryMl": "തഞ്ചാവൂരിലെ കൊങ്ങന്മാരിൽപ്പെട്ട മധുവ്യാപാരി പഴയനിൽ നിന്നാണ് ഈ നാടിന് പേര് ലഭിച്ചതെന്ന് പഴമക്കാർ പറയുന്നു.",
+    "sourceType": "oral tradition",
+    "_sourceNote": "Phrase as tradition, never as documented fact.",
+    "image": "history-origins.jpg",
+    "imageAlt": "Placeholder — replace with a photograph of the temple or the old settlement",
+    "featured": true
+  },
+  {
+    "slug": "kuttadanthodu",
+    "era": "c. 1790",
+    "eraMl": "ടിപ്പുവിന്റെ പടയോട്ടം",
+    "title": "The women of Kuttadanthodu",
+    "titleMl": "കുട്ടാടൻതോട്",
+    "summary": "When Tipu Sultan's forces advanced, local accounts tell of the women of Pazhayannur meeting them at Kuttadanthodu armed with brooms and pestles, and driving them back. Weapons were recovered at the site long afterwards.",
+    "summaryMl": "ടിപ്പു സുൽത്താന്റെ സൈന്യം എത്തിയപ്പോൾ കുട്ടാടൻതോട്ടിൽ വെച്ച് പഴയന്നൂരിലെ സ്ത്രീകൾ ചൂലും ഉലക്കയുമായി അവരെ നേരിട്ട് പിന്തിരിപ്പിച്ചു എന്നാണ് നാട്ടുകാർ പറയുന്നത്.",
+    "sourceType": "oral tradition",
+    "_sourceNote": "Dating is approximate — Tipu's Kerala campaigns fall around 1789–90. Confirm before publishing a firm year.",
+    "image": "history-kuttadanthodu.jpg",
+    "imageAlt": "Placeholder — replace with a photograph of Kuttadanthodu",
+    "featured": false
+  },
+  {
+    "slug": "reform",
+    "era": "1912 onward",
+    "eraMl": "നവോത്ഥാനം",
+    "title": "Landlords, and the struggle against them",
+    "titleMl": "ജന്മിത്വവും കർഷക സമരങ്ങളും",
+    "summary": "Feudal tenancy and untouchability weighed heavily on the town. Organised peasant struggles for a minimum wage followed. The ALP School at Kunnathara, opened in 1912, was the first school here.",
+    "summaryMl": "ജന്മിത്വവും അയിത്തവും ഈ നാടിനെ ഏറെ വലച്ചു. മിനിമം കൂലിക്കായുള്ള കർഷക സമരങ്ങൾ ശക്തമായിരുന്നു. 1912-ൽ ആരംഭിച്ച കുന്നത്തറ എ.എൽ.പി. സ്കൂളാണ് ഇവിടത്തെ ആദ്യ വിദ്യാലയം.",
+    "sourceType": "documented",
+    "image": "history-reform.jpg",
+    "imageAlt": "Placeholder — replace with a photograph of the ALP School at Kunnathara",
+    "featured": false
+  }
+]

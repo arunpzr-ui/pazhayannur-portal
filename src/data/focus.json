@@ -1,0 +1,15 @@
+[
+  { "code": "F / 01", "slug": "agriculture", "title": "Agriculture", "ml": "കൃഷി" },
+  { "code": "F / 02", "slug": "animal-husbandry", "title": "Animal husbandry", "ml": "മൃഗസംരക്ഷണം" },
+  { "code": "F / 03", "slug": "sanitation-waste", "title": "Sanitation & waste", "ml": "ശുചിത്വവും മാലിന്യ സംസ്കരണവും" },
+  { "code": "F / 04", "slug": "drinking-water", "title": "Drinking water", "ml": "കുടിവെള്ളം" },
+  { "code": "F / 05", "slug": "good-governance", "title": "Good governance", "ml": "സദ്ഭരണം" },
+  { "code": "F / 06", "slug": "public-works", "title": "Public works", "ml": "പൊതുമരാമത്ത്" },
+  { "code": "F / 07", "slug": "sc-st-development", "title": "SC & ST development", "ml": "പട്ടികജാതി — പട്ടികവർഗ വികസനം" },
+  { "code": "F / 08", "slug": "disaster-management", "title": "Disaster management", "ml": "ദുരന്തനിവാരണം" },
+  { "code": "F / 09", "slug": "local-economic-development", "title": "Local economic development", "ml": "തദ്ദേശീയ സാമ്പത്തിക വികസനം" },
+  { "code": "F / 10", "slug": "education-art-culture", "title": "Education, art & culture", "ml": "വിദ്യാഭ്യാസം, കല, സംസ്കാരം" },
+  { "code": "F / 11", "slug": "poverty-alleviation", "title": "Poverty alleviation", "ml": "ദാരിദ്ര്യ ലഘൂകരണം" },
+  { "code": "F / 12", "slug": "social-justice", "title": "Social justice", "ml": "സാമൂഹ്യനീതി" },
+  { "code": "F / 13", "slug": "women-child-development", "title": "Women & child development", "ml": "വനിതാ — ശിശു വികസനം" }
+]

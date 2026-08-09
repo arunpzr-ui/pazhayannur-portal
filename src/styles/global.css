@@ -1,0 +1,227 @@
+/* ============================================================
+   PAZHAYANNUR — PANCHAVARNAM DESIGN SYSTEM
+   Tailwind CSS v4 · CSS-first configuration
+   ------------------------------------------------------------
+   The palette derives from the five natural powders used in
+   kalamezhuthu, the ritual floor drawing of Kerala's temple
+   courtyards. Do not add colours outside this system.
+   ============================================================ */
+
+@import "tailwindcss";
+
+/* ------------------------------------------------------------
+   DESIGN TOKENS
+   In v4 there is NO tailwind.config.js — everything lives here.
+   A token named --color-turmeric generates bg-turmeric,
+   text-turmeric, border-turmeric, etc. automatically.
+   ------------------------------------------------------------ */
+@theme {
+  /* ---- Panchavarnam · the five powders ---- */
+  --color-rice: #f4f0e4; /* അരിപ്പൊടി — rice flour */
+  --color-turmeric: #e8a317; /* മഞ്ഞൾ — turmeric */
+  --color-vaka: #2f7d5b; /* വാകയില — vaka leaf */
+  --color-kumkum: #c3341b; /* ചുവപ്പ് — lime + turmeric */
+  --color-ink: #100e0c; /* കരി — charcoal (page base) */
+
+  /* ---- Supporting surfaces ---- */
+  --color-ink2: #191512; /* alternating section band */
+  --color-ink3: #241f1a; /* raised surface / charcoal swatch */
+  --color-vakadeep: #14452f; /* deep forest, used in gradients */
+
+  /* ---- Typefaces ---- */
+  --font-display: "Bricolage Grotesque Variable", system-ui, sans-serif;
+  --font-body: "Instrument Sans Variable", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+  --font-mal: "Anek Malayalam", system-ui, sans-serif;
+
+  /* ---- Motion ---- */
+  --ease-panchavarnam: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ------------------------------------------------------------
+   BASE
+   ------------------------------------------------------------ */
+@layer base {
+  /* Tailwind v4 changed the default border colour to currentColor.
+     Our system always uses a faint rice hairline, so we restore a
+     sane default rather than letting stray `border` classes inherit
+     the text colour. */
+  *,
+  ::before,
+  ::after {
+    border-color: color-mix(in oklab, var(--color-rice) 12%, transparent);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-rice);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-turmeric);
+    color: var(--color-ink);
+  }
+
+  /* Malayalam sits optically larger and needs more leading than
+     Latin at the same nominal size. Applied wherever font-mal is used. */
+  .font-mal,
+  :lang(ml) {
+    font-family: var(--font-mal);
+    line-height: 1.45;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-turmeric);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+/* ------------------------------------------------------------
+   COMPONENTS
+   Signature surfaces of the Panchavarnam system.
+   ------------------------------------------------------------ */
+@layer components {
+  /* ---- Frosted administrative panel ---- */
+  .glass {
+    background: rgb(244 240 228 / 0.055);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgb(244 240 228 / 0.12);
+  }
+
+  .glass-hover {
+    transition:
+      background 0.4s var(--ease-panchavarnam),
+      border-color 0.4s var(--ease-panchavarnam),
+      transform 0.4s var(--ease-panchavarnam);
+  }
+
+  .glass-hover:hover {
+    background: rgb(244 240 228 / 0.1);
+    border-color: rgb(232 163 23 / 0.45);
+    transform: translateY(-4px);
+  }
+
+  /* ---- Scroll reveal (driven by IntersectionObserver) ---- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.9s var(--ease-panchavarnam),
+      transform 0.9s var(--ease-panchavarnam);
+    transition-delay: var(--d, 0ms);
+  }
+
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ---- Terrain fallback: shown when a photograph fails to load,
+          so the page never renders a broken frame ---- */
+  .terrain-fallback {
+    background:
+      radial-gradient(120% 90% at 20% 10%, #1d5a41 0%, transparent 60%),
+      radial-gradient(100% 80% at 85% 25%, #2f5f4e 0%, transparent 55%),
+      linear-gradient(180deg, #123326 0%, var(--color-ink) 85%);
+  }
+
+  /* ---- Topographic contour draw-on (hero signature) ---- */
+  .contour path {
+    stroke-dasharray: 2400;
+    stroke-dashoffset: 2400;
+    animation: contour-draw 3.4s var(--ease-panchavarnam) forwards;
+  }
+
+  @keyframes contour-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* ---- Five-dot Panchavarnam section index ---- */
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 9999px;
+    border: 1px solid rgb(244 240 228 / 0.35);
+    transition: all 0.5s var(--ease-panchavarnam);
+  }
+
+  .dot.on {
+    border-color: transparent;
+    transform: scale(1.5);
+  }
+
+  /* ---- Section rule, keyed to the section's powder colour ---- */
+  .rule {
+    height: 1px;
+    background: linear-gradient(90deg, var(--key, var(--color-turmeric)), transparent);
+  }
+
+  /* ---- Short gold rule leading the hero tagline ---- */
+  .tagline-rule {
+    height: 1px;
+    width: 64px;
+    background: var(--color-turmeric);
+    opacity: 0.7;
+  }
+
+  /* ---- Navbar scrolled state (class toggled in JS) ---- */
+  .nav-stuck {
+    background: rgb(16 14 12 / 0.78);
+    backdrop-filter: blur(20px);
+    border-color: rgb(244 240 228 / 0.1);
+  }
+
+  /* ---- Underline that grows on hover ---- */
+  .navlink {
+    position: relative;
+  }
+
+  .navlink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 1px;
+    width: 0;
+    background: var(--color-turmeric);
+    transition: width 0.35s var(--ease-panchavarnam);
+  }
+
+  .navlink:hover::after {
+    width: 100%;
+  }
+}
+
+/* ------------------------------------------------------------
+   ACCESSIBILITY
+   Motion is decoration here, never meaning. Everything must be
+   fully legible with animation switched off.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .contour path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

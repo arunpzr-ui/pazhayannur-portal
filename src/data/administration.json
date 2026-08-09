@@ -1,0 +1,56 @@
+{
+  "timeline": [
+    {
+      "year": "1110 ME · c. 1935",
+      "yearMl": "കൊല്ലവർഷം 1110",
+      "title": "A royal panchayat",
+      "titleMl": "രാജകീയ പഞ്ചായത്ത്",
+      "body": "Constituted under the Kochi state, with C. Karunakaran Nair at its head.",
+      "bodyMl": "കൊച്ചി രാജ്യത്തിന് കീഴിൽ സി. കരുണാകരൻ നായരുടെ നേതൃത്വത്തിൽ രൂപീകൃതമായി."
+    },
+    {
+      "year": "1954",
+      "yearMl": "ആദ്യ തിരഞ്ഞെടുപ്പ്",
+      "title": "The first elected president",
+      "titleMl": "ആദ്യ പ്രസിഡന്റ്",
+      "body": "Aachattil Narayanankutty Menon took office in the first election after independence.",
+      "bodyMl": "സ്വാതന്ത്ര്യാനന്തരമുള്ള ആദ്യ തിരഞ്ഞെടുപ്പിൽ ആചാട്ടിൽ നാരായണൻകുട്ടി മേനോൻ അധികാരമേറ്റു."
+    },
+    {
+      "year": "2025",
+      "yearMl": "ഇന്നത്തെ ഭരണസമിതി",
+      "title": "The present committee",
+      "titleMl": "നിലവിലെ സമിതി",
+      "body": "President Sajitha Murali and Vice President Suresh C.C., with twenty-four elected members.",
+      "bodyMl": "പ്രസിഡന്റ് സജിത മുരളി, വൈസ് പ്രസിഡന്റ് സുരേഷ് സി.സി., ഒപ്പം ഇരുപത്തിനാല് അംഗങ്ങൾ."
+    }
+  ],
+  "council": [
+    {
+      "name": "President — Sajitha Murali",
+      "ml": "പ്രസിഡന്റ്",
+      "body": "Heads the elected committee and chairs its meetings. Term beginning 2025."
+    },
+    {
+      "name": "Vice President — Suresh C.C.",
+      "ml": "വൈസ് പ്രസിഡന്റ്",
+      "body": "Deputises for the president and works with the standing committees."
+    },
+    {
+      "name": "The elected committee",
+      "ml": "ഭരണസമിതി",
+      "body": "Twenty-four members, elected by ward, meeting to approve the annual plan and budget."
+    },
+    {
+      "name": "Standing committees",
+      "ml": "സ്റ്റാൻഡിംഗ് കമ്മിറ്റികൾ",
+      "body": "Subject committees covering finance, development, welfare, health and public works. Membership to be added."
+    },
+    {
+      "name": "Ninety years of self-government",
+      "ml": "തൊണ്ണൂറ് വർഷത്തെ ഭരണം",
+      "body": "From the royal panchayat of 1110 ME to the present council — the full list of presidents since 1954 is being compiled."
+    }
+  ],
+  "_openQuestion": "town.json lists 22 wards; this committee is recorded as 24 members. Kerala panchayats seat one member per ward, so one figure is from a different term. Resolve before launch."
+}

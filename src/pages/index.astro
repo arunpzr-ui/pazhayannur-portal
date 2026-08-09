@@ -1,0 +1,262 @@
+---
+import Base from "../layouts/Base.astro";
+import town from "../data/town.json";
+import history from "../data/history.json";
+import administration from "../data/administration.json";
+import culture from "../data/culture.json";
+import focus from "../data/focus.json";
+
+const origins = history.find((h) => h.slug === "origins")!;
+const currentCommittee = administration.timeline.at(-1)!;
+
+const sections = [
+  { id: "history", num: "01", key: "rice", en: "History", ml: "ചരിത്രം" },
+  { id: "administration", num: "02", key: "turmeric", en: "Administration", ml: "ഭരണം" },
+  { id: "geography", num: "03", key: "vaka", en: "Geography", ml: "ഭൂമിശാസ്ത്രം" },
+  { id: "culture", num: "04", key: "kumkum", en: "Life & culture", ml: "സംസ്കാരം" },
+  { id: "focus", num: "05", key: "ink3", en: "Development focus", ml: "വികസന കാഴ്ചപ്പാട്" },
+];
+---
+
+<Base
+  title="Home"
+  description={town.description}
+>
+  <Fragment slot="nav">
+    <header
+      id="nav"
+      x-data="{ open: false }"
+      class="fixed top-0 inset-x-0 z-50 border-b border-transparent transition-colors duration-500"
+    >
+      <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+        <a href="#top" class="font-display font-extrabold text-lg tracking-tight">
+          {town.name}
+          <span lang="ml" class="font-mal text-sm text-rice/50 ml-1">{town.nameMl}</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8 font-mono text-[11px] tracking-[0.18em] uppercase">
+          {sections.map((s) => (
+            <a href={`#${s.id}`} class="navlink text-rice/70 hover:text-rice">{s.en}</a>
+          ))}
+        </nav>
+
+        <button
+          @click="open = !open"
+          class="md:hidden text-rice/80 outline-hidden focus-visible:outline-2 focus-visible:outline-turmeric"
+          aria-label="Toggle menu"
+          :aria-expanded="open"
+        >
+          <span x-text="open ? '✕' : '☰'" class="text-xl"></span>
+        </button>
+      </div>
+
+      <nav
+        x-show="open"
+        x-cloak
+        x-transition
+        class="md:hidden glass mx-4 mb-4 rounded-2xl px-6 py-4 flex flex-col gap-4 font-mono text-xs tracking-[0.18em] uppercase"
+      >
+        {sections.map((s) => (
+          <a href={`#${s.id}`} @click="open = false" class="text-rice/80">{s.en}</a>
+        ))}
+      </nav>
+    </header>
+  </Fragment>
+
+  <div id="top" class="terrain-fallback relative overflow-hidden pt-40 pb-28 px-6">
+    <div class="mx-auto max-w-6xl">
+      <div class="tagline-rule mb-6"></div>
+      <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mb-4">
+        Thalappilly Taluk &middot; Thrissur District &middot; Kerala
+      </p>
+
+      <h1 class="font-display font-extrabold text-5xl md:text-7xl leading-[0.92] tracking-[-0.035em]">
+        {town.name}
+        <span lang="ml" class="block font-mal text-2xl md:text-3xl text-rice/45 mt-3 font-normal">
+          {town.nameMl}
+        </span>
+      </h1>
+
+      <p lang="ml" class="font-mal text-xl md:text-2xl text-rice/70 mt-8 max-w-xl">
+        {town.tagline}
+      </p>
+      <p class="text-rice/50 mt-2 max-w-xl">{town.taglineGloss}</p>
+
+      <p class="text-rice/60 mt-8 max-w-xl leading-relaxed">{town.description}</p>
+
+      <div class="flex items-center gap-2 mt-14">
+        {sections.map((s, i) => (
+          <div
+            class={`dot ${i === 0 ? "on" : ""}`}
+            style={i === 0 ? `background: var(--color-${s.key})` : ""}
+          ></div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <section class="border-y border-rice/12 bg-ink2">
+    <div class="mx-auto max-w-6xl px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+      {town.metrics.map((m, i) => (
+        <div class="reveal" style={`--d:${i * 110}ms`}>
+          <p
+            class="font-display font-extrabold text-4xl md:text-5xl"
+            style={`color: var(--color-${m.key})`}
+            data-count={m.value}
+            data-decimals={m.decimals}
+            data-suffix={m.suffix}
+          >
+            0
+          </p>
+          <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mt-2">{m.label}</p>
+          <p lang="ml" class="font-mal text-sm text-rice/40 mt-1">{m.ml}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="history" class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-rice)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">01</span>
+        <h2 class="font-display font-extrabold text-4xl md:text-5xl">
+          History
+          <span lang="ml" class="block font-mal text-lg text-rice/45 mt-2">ചരിത്രം</span>
+        </h2>
+      </div>
+      <div class="reveal glass glass-hover rounded-2xl p-8 max-w-3xl" style="--d:110ms">
+        <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mb-3">{origins.era}</p>
+        <h3 class="font-display font-bold text-2xl mb-3">{origins.title}</h3>
+        <p class="text-rice/65 leading-relaxed">{origins.summary}</p>
+        <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/35 mt-4">
+          {origins.sourceType}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="administration" class="px-6 py-24 bg-ink2 border-y border-rice/12">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-turmeric)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">02</span>
+        <h2 class="font-display font-extrabold text-4xl md:text-5xl">
+          Administration
+          <span lang="ml" class="block font-mal text-lg text-rice/45 mt-2">ഭരണം</span>
+        </h2>
+      </div>
+      <div class="reveal glass glass-hover rounded-2xl p-8 max-w-3xl" style="--d:110ms">
+        <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-turmeric/70 mb-3">
+          {currentCommittee.year}
+        </p>
+        <h3 class="font-display font-bold text-2xl mb-3">{currentCommittee.title}</h3>
+        <p class="text-rice/65 leading-relaxed">{currentCommittee.body}</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="geography" class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-vaka)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">03</span>
+        <h2 class="font-display font-extrabold text-4xl md:text-5xl">
+          Geography
+          <span lang="ml" class="block font-mal text-lg text-rice/45 mt-2">ഭൂമിശാസ്ത്രം</span>
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4 max-w-3xl">
+        {town.boundaries.map((b, i) => (
+          <div class="reveal glass glass-hover rounded-2xl p-6" style={`--d:${i * 90}ms`}>
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-vaka/80 mb-2">{b.direction}</p>
+            <p class="text-rice/70">{b.place}</p>
+            <p lang="ml" class="font-mal text-sm text-rice/40 mt-1">{b.placeMl}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="culture" class="px-6 py-24 bg-ink2 border-y border-rice/12">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-kumkum)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">04</span>
+        <h2 class="font-display font-extrabold text-4xl md:text-5xl">
+          Life &amp; culture
+          <span lang="ml" class="block font-mal text-lg text-rice/45 mt-2">സംസ്കാരം</span>
+        </h2>
+      </div>
+      <p class="reveal text-rice/60 max-w-2xl leading-relaxed mb-10" style="--d:80ms">{culture.intro}</p>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl">
+        {culture.people.map((p, i) => (
+          <div class="reveal glass glass-hover rounded-2xl p-6" style={`--d:${i * 90}ms`}>
+            <p class="font-display font-bold">{p.name}</p>
+            <p lang="ml" class="font-mal text-sm text-rice/45 mt-1">{p.ml}</p>
+            <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-kumkum/70 mt-3">{p.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="focus" class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-ink3)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">05</span>
+        <h2 class="font-display font-extrabold text-4xl md:text-5xl">
+          Development focus
+          <span lang="ml" class="block font-mal text-lg text-rice/45 mt-2">വികസന കാഴ്ചപ്പാട്</span>
+        </h2>
+      </div>
+      <div class="flex flex-wrap gap-3 max-w-4xl">
+        {focus.map((f, i) => (
+          <div
+            class="reveal glass glass-hover rounded-full px-5 py-3 flex items-center gap-3"
+            style={`--d:${i * 60}ms`}
+          >
+            <span class="font-mono text-[10px] text-rice/35">{f.code}</span>
+            <span class="text-sm">{f.title}</span>
+            <span lang="ml" class="font-mal text-xs text-rice/40">{f.ml}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <footer class="border-t border-rice/12 px-6 py-14">
+      <div class="mx-auto max-w-6xl">
+        <p class="text-rice/50 text-sm max-w-2xl leading-relaxed">
+          This is a community-driven initiative celebrating the heritage and progress
+          of Pazhayannur. For official government services, please contact the
+          Panchayat office.
+        </p>
+        <div class="flex flex-wrap items-center gap-6 mt-8 font-mono text-[11px] tracking-[0.15em] uppercase text-rice/40">
+          <span>&copy; {new Date().getFullYear()} {town.name}</span>
+          <a href={`mailto:${town.contact.email}`} class="hover:text-rice/70">{town.contact.email}</a>
+          <a href={town.panchayatOffice.officialPortal} class="hover:text-rice/70">Official LSGD portal</a>
+        </div>
+      </div>
+    </footer>
+  </Fragment>
+</Base>
+
+<script>
+  import Alpine from "alpinejs";
+  declare global {
+    interface Window {
+      Alpine: typeof Alpine;
+    }
+  }
+  window.Alpine = Alpine;
+  Alpine.start();
+</script>
+
+<style>
+  [x-cloak] {
+    display: none !important;
+  }
+</style>
