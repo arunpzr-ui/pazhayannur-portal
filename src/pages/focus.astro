@@ -1,0 +1,91 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import focus from "../data/focus.json";
+---
+
+<Base
+  title="Development focus"
+  description="The thirteen sectors Pazhayannur's local development planning is organised around, from agriculture and drinking water to social justice."
+>
+  <Fragment slot="nav">
+    <Nav />
+  </Fragment>
+
+  <div class="relative overflow-hidden pt-40 pb-20 px-6">
+    <div class="mx-auto max-w-6xl">
+      <a
+        href="/"
+        class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/40 hover:text-rice/70 transition-colors"
+      >
+        &larr; Pazhayannur
+      </a>
+
+      <div class="tagline-rule my-6"></div>
+
+      <div class="reveal flex items-baseline gap-4">
+        <span class="font-mono text-xs text-rice/40">05</span>
+        <h1 class="font-display font-extrabold text-5xl md:text-7xl leading-[0.92] tracking-[-0.035em]">
+          Development focus
+          <span lang="ml" class="block font-mal text-2xl md:text-3xl text-rice/45 mt-3 font-normal">
+            വികസന കാഴ്ചപ്പാട്
+          </span>
+        </h1>
+      </div>
+
+      <p class="reveal text-rice/60 mt-8 max-w-xl leading-relaxed" style="--d:110ms">
+        The sectors Pazhayannur's local development planning is organised around —
+        the same categories the panchayat's standing committees work through each
+        year to shape the annual plan and budget.
+      </p>
+    </div>
+  </div>
+
+  <section class="border-y border-rice/12 bg-ink2">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <div class="reveal">
+        <p
+          class="font-display font-extrabold text-4xl md:text-5xl"
+          data-count={focus.length}
+          data-decimals="0"
+          data-suffix=""
+        >
+          0
+        </p>
+        <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mt-2">Sectors</p>
+        <p lang="ml" class="font-mal text-sm text-rice/40 mt-1">മേഖലകൾ</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-ink3)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">Sectors</span>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl">
+          Thirteen areas of focus
+          <span lang="ml" class="block font-mal text-base text-rice/45 mt-2">പതിമൂന്ന് മേഖലകൾ</span>
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {focus.map((f, i) => (
+          <div
+            class="reveal rounded-2xl p-6 bg-ink3/40 border border-rice/10 transition-colors duration-400 hover:border-rice/25"
+            style={`--d:${i * 70}ms`}
+          >
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/35 mb-3">{f.code}</p>
+            <p class="font-display font-bold text-lg">{f.title}</p>
+            <p lang="ml" class="font-mal text-sm text-rice/45 mt-1">{f.ml}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</Base>
