@@ -1,21 +1,16 @@
 ---
 import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 import town from "../data/town.json";
 import history from "../data/history.json";
 import administration from "../data/administration.json";
 import culture from "../data/culture.json";
 import focus from "../data/focus.json";
+import { sections } from "../lib/sections";
 
 const origins = history.find((h) => h.slug === "origins")!;
 const currentCommittee = administration.timeline.at(-1)!;
-
-const sections = [
-  { id: "history", num: "01", key: "rice", en: "History", ml: "ചരിത്രം" },
-  { id: "administration", num: "02", key: "turmeric", en: "Administration", ml: "ഭരണം" },
-  { id: "geography", num: "03", key: "vaka", en: "Geography", ml: "ഭൂമിശാസ്ത്രം" },
-  { id: "culture", num: "04", key: "kumkum", en: "Life & culture", ml: "സംസ്കാരം" },
-  { id: "focus", num: "05", key: "ink3", en: "Development focus", ml: "വികസന കാഴ്ചപ്പാട്" },
-];
 ---
 
 <Base
@@ -23,44 +18,7 @@ const sections = [
   description={town.description}
 >
   <Fragment slot="nav">
-    <header
-      id="nav"
-      x-data="{ open: false }"
-      class="fixed top-0 inset-x-0 z-50 border-b border-transparent transition-colors duration-500"
-    >
-      <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-        <a href="#top" class="font-display font-extrabold text-lg tracking-tight">
-          {town.name}
-          <span lang="ml" class="font-mal text-sm text-rice/50 ml-1">{town.nameMl}</span>
-        </a>
-
-        <nav class="hidden md:flex items-center gap-8 font-mono text-[11px] tracking-[0.18em] uppercase">
-          {sections.map((s) => (
-            <a href={`#${s.id}`} class="navlink text-rice/70 hover:text-rice">{s.en}</a>
-          ))}
-        </nav>
-
-        <button
-          @click="open = !open"
-          class="md:hidden text-rice/80 outline-hidden focus-visible:outline-2 focus-visible:outline-turmeric"
-          aria-label="Toggle menu"
-          :aria-expanded="open"
-        >
-          <span x-text="open ? '✕' : '☰'" class="text-xl"></span>
-        </button>
-      </div>
-
-      <nav
-        x-show="open"
-        x-cloak
-        x-transition
-        class="md:hidden glass mx-4 mb-4 rounded-2xl px-6 py-4 flex flex-col gap-4 font-mono text-xs tracking-[0.18em] uppercase"
-      >
-        {sections.map((s) => (
-          <a href={`#${s.id}`} @click="open = false" class="text-rice/80">{s.en}</a>
-        ))}
-      </nav>
-    </header>
+    <Nav />
   </Fragment>
 
   <div id="top" class="terrain-fallback relative overflow-hidden pt-40 pb-28 px-6">
@@ -133,6 +91,12 @@ const sections = [
           {origins.sourceType}
         </p>
       </div>
+      <a
+        href="/history"
+        class="navlink inline-block mt-6 font-mono text-[11px] tracking-[0.18em] uppercase text-rice/60 hover:text-rice"
+      >
+        Read the full history &rarr;
+      </a>
     </div>
   </section>
 
@@ -227,36 +191,6 @@ const sections = [
   </section>
 
   <Fragment slot="footer">
-    <footer class="border-t border-rice/12 px-6 py-14">
-      <div class="mx-auto max-w-6xl">
-        <p class="text-rice/50 text-sm max-w-2xl leading-relaxed">
-          This is a community-driven initiative celebrating the heritage and progress
-          of Pazhayannur. For official government services, please contact the
-          Panchayat office.
-        </p>
-        <div class="flex flex-wrap items-center gap-6 mt-8 font-mono text-[11px] tracking-[0.15em] uppercase text-rice/40">
-          <span>&copy; {new Date().getFullYear()} {town.name}</span>
-          <a href={`mailto:${town.contact.email}`} class="hover:text-rice/70">{town.contact.email}</a>
-          <a href={town.panchayatOffice.officialPortal} class="hover:text-rice/70">Official LSGD portal</a>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </Fragment>
 </Base>
-
-<script>
-  import Alpine from "alpinejs";
-  declare global {
-    interface Window {
-      Alpine: typeof Alpine;
-    }
-  }
-  window.Alpine = Alpine;
-  Alpine.start();
-</script>
-
-<style>
-  [x-cloak] {
-    display: none !important;
-  }
-</style>

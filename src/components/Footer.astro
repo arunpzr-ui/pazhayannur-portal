@@ -1,0 +1,18 @@
+---
+import town from "../data/town.json";
+---
+
+<footer class="border-t border-rice/12 px-6 py-14">
+  <div class="mx-auto max-w-6xl">
+    <p class="text-rice/50 text-sm max-w-2xl leading-relaxed">
+      This is a community-driven initiative celebrating the heritage and progress
+      of Pazhayannur. For official government services, please contact the
+      Panchayat office.
+    </p>
+    <div class="flex flex-wrap items-center gap-6 mt-8 font-mono text-[11px] tracking-[0.15em] uppercase text-rice/40">
+      <span>&copy; {new Date().getFullYear()} {town.name}</span>
+      <a href={`mailto:${town.contact.email}`} class="hover:text-rice/70">{town.contact.email}</a>
+      <a href={town.panchayatOffice.officialPortal} class="hover:text-rice/70">Official LSGD portal</a>
+    </div>
+  </div>
+</footer>

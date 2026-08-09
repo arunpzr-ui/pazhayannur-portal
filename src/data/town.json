@@ -23,8 +23,7 @@
     "value": 59.03,
     "unit": "sq km"
   },
-  "wards": 22,
-  "_wardsNote": "Figures list 22 wards; the 2025 committee is recorded as 24 members. Verify before launch and update both this value and WardGrid.astro.",
+  "wards": 24,
   "population": {
     "value": 10000,
     "qualifier": "+",
@@ -48,7 +47,7 @@
       "key": "vaka"
     },
     {
-      "value": 22,
+      "value": 24,
       "suffix": "",
       "decimals": 0,
       "label": "Wards",

@@ -1,0 +1,60 @@
+---
+import town from "../data/town.json";
+import { sections } from "../lib/sections";
+---
+
+<header
+  id="nav"
+  x-data="{ open: false }"
+  class="fixed top-0 inset-x-0 z-50 border-b border-transparent transition-colors duration-500"
+>
+  <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+    <a href="/" class="font-display font-extrabold text-lg tracking-tight">
+      {town.name}
+      <span lang="ml" class="font-mal text-sm text-rice/50 ml-1">{town.nameMl}</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 font-mono text-[11px] tracking-[0.18em] uppercase">
+      {sections.map((s) => (
+        <a href={s.page ?? `/#${s.id}`} class="navlink text-rice/70 hover:text-rice">{s.en}</a>
+      ))}
+    </nav>
+
+    <button
+      @click="open = !open"
+      class="md:hidden text-rice/80 outline-hidden focus-visible:outline-2 focus-visible:outline-turmeric"
+      aria-label="Toggle menu"
+      :aria-expanded="open"
+    >
+      <span x-text="open ? '✕' : '☰'" class="text-xl"></span>
+    </button>
+  </div>
+
+  <nav
+    x-show="open"
+    x-cloak
+    x-transition
+    class="md:hidden glass mx-4 mb-4 rounded-2xl px-6 py-4 flex flex-col gap-4 font-mono text-xs tracking-[0.18em] uppercase"
+  >
+    {sections.map((s) => (
+      <a href={s.page ?? `/#${s.id}`} @click="open = false" class="text-rice/80">{s.en}</a>
+    ))}
+  </nav>
+</header>
+
+<script>
+  import Alpine from "alpinejs";
+  declare global {
+    interface Window {
+      Alpine: typeof Alpine;
+    }
+  }
+  window.Alpine = Alpine;
+  Alpine.start();
+</script>
+
+<style>
+  [x-cloak] {
+    display: none !important;
+  }
+</style>

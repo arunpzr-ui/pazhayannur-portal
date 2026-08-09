@@ -1,0 +1,100 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import history from "../data/history.json";
+---
+
+<Base
+  title="History"
+  description="The oral traditions and documented milestones behind Pazhayannur's name, its resistance to Tipu Sultan's forces, and the peasant struggles that shaped the town."
+>
+  <Fragment slot="nav">
+    <Nav />
+  </Fragment>
+
+  <div class="relative overflow-hidden pt-40 pb-20 px-6">
+    <div class="mx-auto max-w-6xl">
+      <a
+        href="/"
+        class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/40 hover:text-rice/70 transition-colors"
+      >
+        &larr; Pazhayannur
+      </a>
+
+      <div class="tagline-rule my-6"></div>
+
+      <div class="reveal flex items-baseline gap-4">
+        <span class="font-mono text-xs text-rice/40">01</span>
+        <h1 class="font-display font-extrabold text-5xl md:text-7xl leading-[0.92] tracking-[-0.035em]">
+          History
+          <span lang="ml" class="block font-mal text-2xl md:text-3xl text-rice/45 mt-3 font-normal">
+            ചരിത്രം
+          </span>
+        </h1>
+      </div>
+
+      <p class="reveal text-rice/60 mt-8 max-w-xl leading-relaxed" style="--d:110ms">
+        Some of this is documented. Some of it survives only as tradition, carried
+        forward by people who were told it by people before them. Where the record
+        ends and memory begins is marked here, not smoothed over.
+      </p>
+    </div>
+  </div>
+
+  <section class="px-6 pb-28">
+    <div class="mx-auto max-w-6xl">
+      <div class="relative">
+        <div
+          class="absolute left-[7px] top-2 bottom-2 w-px bg-rice/12 hidden sm:block"
+          aria-hidden="true"
+        >
+        </div>
+
+        <ol class="space-y-10">
+          {history.map((entry, i) => (
+            <li class="reveal relative sm:pl-14" style={`--d:${i * 120}ms`}>
+              <span
+                class="hidden sm:block absolute left-0 top-2 w-3.5 h-3.5 rounded-full border border-rice/35"
+                style={entry.featured ? "background: var(--color-rice)" : ""}
+                aria-hidden="true"
+              >
+              </span>
+
+              <div class="glass glass-hover rounded-2xl p-8 md:p-10">
+                <div class="flex flex-wrap items-center gap-3 mb-4">
+                  <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45">
+                    {entry.era}
+                  </p>
+                  <span class="text-rice/20">&middot;</span>
+                  <p lang="ml" class="font-mal text-xs text-rice/35">{entry.eraMl}</p>
+                  <span
+                    class={`ml-auto font-mono text-[10px] tracking-[0.18em] uppercase px-2.5 py-1 rounded-full border ${
+                      entry.sourceType === "oral tradition"
+                        ? "border-rice/20 text-rice/40"
+                        : "border-rice/35 text-rice/70"
+                    }`}
+                  >
+                    {entry.sourceType}
+                  </span>
+                </div>
+
+                <h2 class="font-display font-bold text-2xl md:text-3xl mb-1">{entry.title}</h2>
+                <p lang="ml" class="font-mal text-base text-rice/40 mb-6">{entry.titleMl}</p>
+
+                <p class="text-rice/65 leading-relaxed max-w-3xl">{entry.summary}</p>
+                <p lang="ml" class="font-mal text-rice/40 leading-relaxed max-w-3xl mt-4">
+                  {entry.summaryMl}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</Base>
