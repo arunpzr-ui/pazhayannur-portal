@@ -1,0 +1,158 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import town from "../data/town.json";
+import administration from "../data/administration.json";
+
+const currentCommittee = administration.timeline.at(-1)!;
+---
+
+<Base
+  title="Administration"
+  description="Ninety years of local self-government in Pazhayannur, from the royal panchayat of 1110 ME to the present twenty-four-member elected committee."
+>
+  <Fragment slot="nav">
+    <Nav />
+  </Fragment>
+
+  <div class="relative overflow-hidden pt-40 pb-20 px-6">
+    <div class="mx-auto max-w-6xl">
+      <a
+        href="/"
+        class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/40 hover:text-rice/70 transition-colors"
+      >
+        &larr; Pazhayannur
+      </a>
+
+      <div class="tagline-rule my-6"></div>
+
+      <div class="reveal flex items-baseline gap-4">
+        <span class="font-mono text-xs text-rice/40">02</span>
+        <h1 class="font-display font-extrabold text-5xl md:text-7xl leading-[0.92] tracking-[-0.035em]">
+          Administration
+          <span lang="ml" class="block font-mal text-2xl md:text-3xl text-rice/45 mt-3 font-normal">
+            ഭരണം
+          </span>
+        </h1>
+      </div>
+
+      <p class="reveal text-rice/60 mt-8 max-w-xl leading-relaxed" style="--d:110ms">
+        {currentCommittee.body}
+      </p>
+      <p lang="ml" class="reveal font-mal text-rice/40 mt-2 max-w-xl leading-relaxed" style="--d:110ms">
+        {currentCommittee.bodyMl}
+      </p>
+    </div>
+  </div>
+
+  <section class="border-y border-rice/12 bg-ink2">
+    <div class="mx-auto max-w-6xl px-6 py-16 grid grid-cols-2 gap-8 max-w-sm">
+      <div class="reveal">
+        <p
+          class="font-display font-extrabold text-4xl md:text-5xl text-turmeric"
+          data-count={town.wards}
+          data-decimals="0"
+          data-suffix=""
+        >
+          0
+        </p>
+        <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mt-2">Wards</p>
+        <p lang="ml" class="font-mal text-sm text-rice/40 mt-1">വാർഡുകൾ</p>
+      </div>
+      <div class="reveal" style="--d:110ms">
+        <p
+          class="font-display font-extrabold text-4xl md:text-5xl text-turmeric"
+          data-count={town.wards}
+          data-decimals="0"
+          data-suffix=""
+        >
+          0
+        </p>
+        <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mt-2">Elected members</p>
+        <p lang="ml" class="font-mal text-sm text-rice/40 mt-1">ഭരണസമിതി അംഗങ്ങൾ</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-turmeric)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">Timeline</span>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl">
+          Ninety years of self-government
+          <span lang="ml" class="block font-mal text-base text-rice/45 mt-2">
+            തൊണ്ണൂറ് വർഷത്തെ ഭരണം
+          </span>
+        </h2>
+      </div>
+
+      <div class="relative">
+        <div
+          class="absolute left-[7px] top-2 bottom-2 w-px bg-rice/12 hidden sm:block"
+          aria-hidden="true"
+        >
+        </div>
+
+        <ol class="space-y-10">
+          {administration.timeline.map((entry, i) => (
+            <li class="reveal relative sm:pl-14" style={`--d:${i * 120}ms`}>
+              <span
+                class="hidden sm:block absolute left-0 top-2 w-3.5 h-3.5 rounded-full border border-turmeric/50"
+                style={i === administration.timeline.length - 1 ? "background: var(--color-turmeric)" : ""}
+                aria-hidden="true"
+              >
+              </span>
+
+              <div class="glass glass-hover rounded-2xl p-8 md:p-10">
+                <div class="flex flex-wrap items-center gap-3 mb-4">
+                  <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-turmeric/80">
+                    {entry.year}
+                  </p>
+                  <span class="text-rice/20">&middot;</span>
+                  <p lang="ml" class="font-mal text-xs text-rice/35">{entry.yearMl}</p>
+                </div>
+
+                <h3 class="font-display font-bold text-2xl md:text-3xl mb-1">{entry.title}</h3>
+                <p lang="ml" class="font-mal text-base text-rice/40 mb-6">{entry.titleMl}</p>
+
+                <p class="text-rice/65 leading-relaxed max-w-3xl">{entry.body}</p>
+                <p lang="ml" class="font-mal text-rice/40 leading-relaxed max-w-3xl mt-4">
+                  {entry.bodyMl}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 pb-28">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-turmeric)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">Council</span>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl">
+          The present committee
+          <span lang="ml" class="block font-mal text-base text-rice/45 mt-2">നിലവിലെ സമിതി</span>
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {administration.council.map((c, i) => (
+          <div class="reveal glass glass-hover rounded-2xl p-6" style={`--d:${i * 90}ms`}>
+            <p class="font-display font-bold">{c.name}</p>
+            <p lang="ml" class="font-mal text-sm text-rice/45 mt-1">{c.ml}</p>
+            <p class="text-rice/60 text-sm leading-relaxed mt-4">{c.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</Base>
