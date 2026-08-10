@@ -1,0 +1,154 @@
+---
+import wardsGeo from "../data/wards-geo.json";
+
+const { width, height, boundary, wards } = wardsGeo;
+
+const ringToPath = (ring: number[][]) =>
+  ring.map((p, i) => `${i === 0 ? "M" : "L"}${p[0]},${p[1]}`).join(" ") + " Z";
+
+const boundaryD =
+  ringToPath(boundary.outer) + " " + boundary.holes.map((h) => ringToPath(h)).join(" ");
+---
+
+<div class="reveal rounded-2xl overflow-hidden border border-rice/12 bg-ink3/25 p-4 md:p-8">
+  <svg
+    class="ward-map"
+    viewBox={`0 0 ${width} ${height}`}
+    role="img"
+    aria-label="Map of Pazhayannur Grama Panchayat's 24 wards"
+  >
+    <defs>
+      <linearGradient id="wardFill" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="var(--color-rice)" stop-opacity="0.14"></stop>
+        <stop offset="100%" stop-color="var(--color-rice)" stop-opacity="0.04"></stop>
+      </linearGradient>
+      <filter id="wardDrop" x="-40%" y="-40%" width="180%" height="180%">
+        <feDropShadow dx="3" dy="6" stdDeviation="4" flood-color="#000" flood-opacity="0.55"></feDropShadow>
+      </filter>
+    </defs>
+
+    <path
+      id="boundary-contour"
+      d={boundaryD}
+      fill-rule="evenodd"
+      fill="rgb(47 125 91 / 0.10)"
+      stroke="var(--color-rice)"
+      stroke-opacity="0.3"
+      stroke-width="2.5"
+    ></path>
+
+    {wards.map((w, i) => (
+      <g class="reveal ward" style={`--d:${i * 22}ms`}>
+        <path
+          class="ward-top"
+          d={ringToPath(w.outer)}
+          fill="url(#wardFill)"
+          stroke="var(--color-rice)"
+          stroke-opacity="0.18"
+          stroke-width="1.5"
+          filter="url(#wardDrop)"
+        ></path>
+        <text
+          class="ward-number"
+          x={w.centroid[0]}
+          y={w.centroid[1]}
+          text-anchor="middle"
+          dominant-baseline="middle"
+        >
+          {w.number}
+        </text>
+        <text
+          class="ward-name"
+          x={w.centroid[0]}
+          y={w.centroid[1] - 14}
+          text-anchor="middle"
+        >
+          {w.name}
+        </text>
+      </g>
+    ))}
+  </svg>
+
+  <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/35 mt-4 text-center">
+    24 wards &middot; hover to see a ward's name
+    <span lang="ml" class="font-mal normal-case tracking-normal text-rice/30">
+      {" "}&middot; വാർഡിന് മുകളിൽ ചൂണ്ടിക്കാട്ടി പേര് കാണുക
+    </span>
+  </p>
+</div>
+
+<script>
+  const boundary = document.getElementById("boundary-contour") as SVGPathElement | null;
+  if (boundary) {
+    const len = boundary.getTotalLength();
+    boundary.style.strokeDasharray = `${len}`;
+    boundary.style.strokeDashoffset = `${len}`;
+    requestAnimationFrame(() => {
+      boundary.style.transition = "stroke-dashoffset 2.6s var(--ease-panchavarnam, ease)";
+      boundary.style.strokeDashoffset = "0";
+    });
+  }
+</script>
+
+<style>
+  .ward-map {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .ward-top {
+    transition:
+      fill 0.35s var(--ease-panchavarnam, ease),
+      stroke 0.35s var(--ease-panchavarnam, ease),
+      stroke-opacity 0.35s var(--ease-panchavarnam, ease);
+  }
+
+  .ward:hover .ward-top {
+    fill: color-mix(in oklab, var(--color-turmeric) 45%, transparent);
+    stroke: var(--color-turmeric);
+    stroke-opacity: 0.9;
+    stroke-width: 2;
+  }
+
+  .ward-number {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    fill: var(--color-rice);
+    fill-opacity: 0.4;
+    paint-order: stroke;
+    stroke: var(--color-ink);
+    stroke-width: 3px;
+    pointer-events: none;
+    transition: fill-opacity 0.3s ease;
+  }
+
+  .ward:hover .ward-number {
+    fill-opacity: 0.9;
+  }
+
+  .ward-name {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    fill: var(--color-rice);
+    paint-order: stroke;
+    stroke: var(--color-ink);
+    stroke-width: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .ward:hover .ward-name {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ward-top,
+    .ward-number,
+    .ward-name {
+      transition: none;
+    }
+  }
+</style>

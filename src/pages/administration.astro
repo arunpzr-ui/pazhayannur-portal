@@ -6,6 +6,7 @@ import { Image } from "astro:assets";
 import town from "../data/town.json";
 import administration from "../data/administration.json";
 import panchayatOffice from "../assets/administration/panchayat-office.jpg";
+import WardMap from "../components/WardMap.astro";
 
 const currentCommittee = administration.timeline.at(-1)!;
 ---
@@ -88,6 +89,23 @@ const currentCommittee = administration.timeline.at(-1)!;
         <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mt-2">Elected members</p>
         <p lang="ml" class="font-mal text-sm text-rice/40 mt-1">ഭരണസമിതി അംഗങ്ങൾ</p>
       </div>
+    </div>
+  </section>
+
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-turmeric)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">Wards</span>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl">
+          The twenty-four wards
+          <span lang="ml" class="block font-mal text-base text-rice/45 mt-2">
+            ഇരുപത്തിനാല് വാർഡുകൾ
+          </span>
+        </h2>
+      </div>
+
+      <WardMap />
     </div>
   </section>
 
