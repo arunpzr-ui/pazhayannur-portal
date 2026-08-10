@@ -1,5 +1,7 @@
 ---
+import { getImage } from "astro:assets";
 import wardsGeo from "../data/wards-geo.json";
+import members from "../data/members.json";
 
 const { width, height, boundary, wards } = wardsGeo;
 
@@ -8,9 +10,37 @@ const ringToPath = (ring: number[][]) =>
 
 const boundaryD =
   ringToPath(boundary.outer) + " " + boundary.holes.map((h) => ringToPath(h)).join(" ");
+
+const memberPhotos = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/administration/members/*.jpg",
+  { eager: true }
+);
+
+const memberByWard = new Map(members.map((m) => [m.ward, m]));
+
+const popup = await Promise.all(
+  wards.map(async (w) => {
+    const m = memberByWard.get(w.number);
+    if (!m) return null;
+    const photo = memberPhotos[m.image];
+    const optimized = await getImage({ src: photo.default, width: 320, height: 420 });
+    return {
+      ward: w.number,
+      name: m.name,
+      role: m.role,
+      roleMl: m.roleMl,
+      wardMl: m.wardMl,
+      party: m.party,
+      src: optimized.src,
+    };
+  })
+);
 ---
 
-<div class="reveal rounded-2xl overflow-hidden border border-rice/12 bg-ink3/25 p-4 md:p-8">
+<div
+  class="reveal relative rounded-2xl overflow-hidden border border-rice/12 bg-ink3/25 p-4 md:p-8"
+  x-data={`{ open: false, current: null, items: ${JSON.stringify(popup)} }`}
+>
   <svg
     class="ward-map"
     viewBox={`0 0 ${width} ${height}`}
@@ -38,7 +68,15 @@ const boundaryD =
     ></path>
 
     {wards.map((w, i) => (
-      <g class="reveal ward" style={`--d:${i * 22}ms`}>
+      <g
+        class="reveal ward"
+        style={`--d:${i * 22}ms`}
+        x-on:click={`current = items[${i}]; open = true`}
+        tabindex="0"
+        role="button"
+        aria-label={`Ward ${w.number}, ${w.name} — view member`}
+        x-on:keydown.enter={`current = items[${i}]; open = true`}
+      >
         <path
           class="ward-top"
           d={ringToPath(w.outer)}
@@ -70,11 +108,56 @@ const boundaryD =
   </svg>
 
   <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/35 mt-4 text-center">
-    24 wards &middot; hover to see a ward's name
+    24 wards &middot; hover for a name, click for the member
     <span lang="ml" class="font-mal normal-case tracking-normal text-rice/30">
-      {" "}&middot; വാർഡിന് മുകളിൽ ചൂണ്ടിക്കാട്ടി പേര് കാണുക
+      {" "}&middot; വാർഡിൽ ക്ലിക്ക് ചെയ്ത് അംഗത്തെ കാണുക
     </span>
   </p>
+
+  <div
+    x-show="open"
+    x-cloak
+    class="fixed inset-0 z-50 flex items-center justify-center p-6 bg-ink/85 backdrop-blur-sm"
+    x-on:click.self="open = false"
+    x-on:keydown.escape.window="open = false"
+  >
+    <template x-if="current">
+      <div
+        x-show="open"
+        x-transition:enter="transition ease-[cubic-bezier(0.16,1,0.3,1)] duration-300"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        class="relative glass rounded-2xl overflow-hidden max-w-sm w-full flex flex-col sm:flex-row"
+      >
+        <button
+          type="button"
+          x-on:click="open = false"
+          aria-label="Close"
+          class="absolute top-2 right-2 z-10 w-7 h-7 rounded-full bg-ink/70 text-rice/70 hover:text-rice hover:bg-ink flex items-center justify-center text-sm"
+        >
+          &#10005;
+        </button>
+        <img
+          x-bind:src="current?.src"
+          x-bind:alt="current?.name"
+          class="w-full sm:w-40 aspect-[3/4] object-cover flex-shrink-0"
+        />
+        <div class="p-5 text-center sm:text-left">
+          <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-turmeric/80">
+            Ward <span x-text="current?.ward"></span>
+          </p>
+          <p class="font-display font-bold text-lg mt-1" x-text="current?.name"></p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.14em] text-rice/50 mt-3 leading-relaxed" x-text="current?.role"></p>
+          <p lang="ml" class="font-mal text-xs text-rice/40 mt-1 leading-relaxed" x-text="current?.roleMl"></p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.14em] text-rice/40 mt-3" x-text="current?.wardMl"></p>
+          <span
+            class="inline-block mt-3 font-mono text-[9px] uppercase tracking-[0.14em] text-rice/35 border border-rice/20 rounded-full px-2 py-0.5"
+            x-text="current?.party"
+          ></span>
+        </div>
+      </div>
+    </template>
+  </div>
 </div>
 
 <script>
@@ -95,6 +178,18 @@ const boundaryD =
     width: 100%;
     height: auto;
     overflow: visible;
+  }
+
+  .ward {
+    cursor: pointer;
+    outline: none;
+  }
+
+  .ward:focus-visible .ward-top {
+    fill: color-mix(in oklab, var(--color-turmeric) 45%, transparent);
+    stroke: var(--color-turmeric);
+    stroke-opacity: 0.9;
+    stroke-width: 2;
   }
 
   .ward-top {
@@ -150,5 +245,9 @@ const boundaryD =
     .ward-name {
       transition: none;
     }
+  }
+
+  [x-cloak] {
+    display: none !important;
   }
 </style>

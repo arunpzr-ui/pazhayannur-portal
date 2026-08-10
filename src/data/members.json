@@ -1,0 +1,242 @@
+[
+  {
+    "ward": 1,
+    "wardMl": "നീർണ്ണമുക്ക്",
+    "name": "ഗീത വി കെ",
+    "role": "Welfare Standing Committee Member",
+    "roleMl": "ക്ഷേമകാര്യ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "CPI(M)",
+    "partyFull": "Communist Party of India (Marxist)",
+    "image": "../assets/administration/members/ward-01.jpg"
+  },
+  {
+    "ward": 2,
+    "wardMl": "കല്ലംപറമ്പ്",
+    "name": "പി സി ശിവകുമാർ",
+    "role": "Health & Education Standing Committee Member",
+    "roleMl": "ആരോഗ്യ-വിദ്യാഭ്യാസ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "CPI(M)",
+    "partyFull": "Communist Party of India (Marxist)",
+    "image": "../assets/administration/members/ward-02.jpg"
+  },
+  {
+    "ward": 3,
+    "wardMl": "കുന്നത്തറ",
+    "name": "അഖില സി യു",
+    "role": "Development Standing Committee Chairman",
+    "roleMl": "വികസന സ്റ്റാൻഡിംഗ് കമ്മിറ്റി ചെയർമാൻ",
+    "party": "CPI(M)",
+    "partyFull": "Communist Party of India (Marxist)",
+    "image": "../assets/administration/members/ward-03.jpg"
+  },
+  {
+    "ward": 4,
+    "wardMl": "കോടത്തൂർ",
+    "name": "ഹരിദാസൻ പി സി",
+    "role": "Development Standing Committee Member",
+    "roleMl": "വികസന സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "CPI(M)",
+    "partyFull": "Communist Party of India (Marxist)",
+    "image": "../assets/administration/members/ward-04.jpg"
+  },
+  {
+    "ward": 5,
+    "wardMl": "ചെറുകര",
+    "name": "സഞ്ജിത് എം",
+    "role": "Finance Standing Committee Member",
+    "roleMl": "ധനകാര്യ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "BJP",
+    "partyFull": "Bharatiya Janata Party",
+    "image": "../assets/administration/members/ward-05.jpg"
+  },
+  {
+    "ward": 6,
+    "wardMl": "കല്ലേപ്പാടം",
+    "name": "സജിത എം",
+    "role": "President",
+    "roleMl": "പ്രസിഡന്റ്",
+    "party": "CPI(M)",
+    "partyFull": "Communist Party of India (Marxist)",
+    "image": "../assets/administration/members/ward-06.jpg"
+  },
+  {
+    "ward": 7,
+    "wardMl": "പാറക്കൽ",
+    "name": "ലേഖാമണി ടി",
+    "role": "Finance Standing Committee Member",
+    "roleMl": "ധനകാര്യ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "INC",
+    "partyFull": "Indian National Congress",
+    "image": "../assets/administration/members/ward-07.jpg"
+  },
+  {
+    "ward": 8,
+    "wardMl": "കുന്നംപുള്ളി",
+    "name": "പ്രിയ വി സി",
+    "role": "Health & Education Standing Committee Member",
+    "roleMl": "ആരോഗ്യ-വിദ്യാഭ്യാസ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "INC",
+    "partyFull": "Indian National Congress",
+    "image": "../assets/administration/members/ward-08.jpg"
+  },
+  {
+    "ward": 9,
+    "wardMl": "പൊറ്റ",
+    "name": "ഷിഫാനത്ത് യു എച്ച്",
+    "role": "Development Standing Committee Member",
+    "roleMl": "വികസന സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "INC",
+    "partyFull": "Indian National Congress",
+    "image": "../assets/administration/members/ward-09.jpg"
+  },
+  {
+    "ward": 10,
+    "wardMl": "വെന്നൂർ",
+    "name": "മുഹമ്മദ് മുസ്തഫ പി എ",
+    "role": "Welfare Standing Committee Member",
+    "roleMl": "ക്ഷേമകാര്യ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "CPI(M)",
+    "partyFull": "Communist Party of India (Marxist)",
+    "image": "../assets/administration/members/ward-10.jpg"
+  },
+  {
+    "ward": 11,
+    "wardMl": "അടിച്ചിറ",
+    "name": "രാജീവ് കെ എസ്",
+    "role": "Development Standing Committee Member",
+    "roleMl": "വികസന സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "INC",
+    "partyFull": "Indian National Congress",
+    "image": "../assets/administration/members/ward-11.jpg"
+  },
+  {
+    "ward": 12,
+    "wardMl": "തിരുമണി",
+    "name": "സജി കെ വി",
+    "role": "Development Standing Committee Member",
+    "roleMl": "വികസന സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "CPI(M)",
+    "partyFull": "Communist Party of India (Marxist)",
+    "image": "../assets/administration/members/ward-12.jpg"
+  },
+  {
+    "ward": 13,
+    "wardMl": "എളനാട്",
+    "name": "അനു ടി പി",
+    "role": "Finance Standing Committee Member",
+    "roleMl": "ധനകാര്യ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "CPI(M)",
+    "partyFull": "Communist Party of India (Marxist)",
+    "image": "../assets/administration/members/ward-13.jpg"
+  },
+  {
+    "ward": 14,
+    "wardMl": "നീളംപള്ളിയാൽ",
+    "name": "നിർമ്മല ടി",
+    "role": "Health & Education Standing Committee Chairman",
+    "roleMl": "ആരോഗ്യ-വിദ്യാഭ്യാസ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി ചെയർമാൻ",
+    "party": "INC",
+    "partyFull": "Indian National Congress",
+    "image": "../assets/administration/members/ward-14.jpg"
+  },
+  {
+    "ward": 15,
+    "wardMl": "തൃക്കണായ",
+    "name": "സുരേഷ് സി സി",
+    "role": "Vice President & Finance Standing Committee Chairman",
+    "roleMl": "വൈസ് പ്രസിഡന്റ് & ധനകാര്യ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി ചെയർമാൻ",
+    "party": "CPI(M)",
+    "partyFull": "Communist Party of India (Marxist)",
+    "image": "../assets/administration/members/ward-15.jpg"
+  },
+  {
+    "ward": 16,
+    "wardMl": "പരുത്തിപ്ര",
+    "name": "സുബൈദ യു",
+    "role": "Finance Standing Committee Member",
+    "roleMl": "ധനകാര്യ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "INC",
+    "partyFull": "Indian National Congress",
+    "image": "../assets/administration/members/ward-16.jpg"
+  },
+  {
+    "ward": 17,
+    "wardMl": "വെണ്ടോക്കുംപറമ്പ്",
+    "name": "പ്രമീള ബി",
+    "role": "Welfare Standing Committee Member",
+    "roleMl": "ക്ഷേമകാര്യ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "INC",
+    "partyFull": "Indian National Congress",
+    "image": "../assets/administration/members/ward-17.jpg"
+  },
+  {
+    "ward": 18,
+    "wardMl": "കുമ്പളക്കോട്",
+    "name": "ശ്രീമതി",
+    "role": "Health & Education Standing Committee Member",
+    "roleMl": "ആരോഗ്യ-വിദ്യാഭ്യാസ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "INC",
+    "partyFull": "Indian National Congress",
+    "image": "../assets/administration/members/ward-18.jpg"
+  },
+  {
+    "ward": 19,
+    "wardMl": "വെളളപ്പാറ",
+    "name": "സിജി ജോൺ",
+    "role": "Welfare Standing Committee Chairman",
+    "roleMl": "ക്ഷേമകാര്യ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി ചെയർമാൻ",
+    "party": "CPI(M)",
+    "partyFull": "Communist Party of India (Marxist)",
+    "image": "../assets/administration/members/ward-19.jpg"
+  },
+  {
+    "ward": 20,
+    "wardMl": "പഴയന്നൂർ",
+    "name": "ബാബു എൻ",
+    "role": "Health & Education Standing Committee Member",
+    "roleMl": "ആരോഗ്യ-വിദ്യാഭ്യാസ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "CPI(M)",
+    "partyFull": "Communist Party of India (Marxist)",
+    "image": "../assets/administration/members/ward-20.jpg"
+  },
+  {
+    "ward": 21,
+    "wardMl": "അത്താണിപറമ്പ്",
+    "name": "വിനോദിനി എ ജി",
+    "role": "Welfare Standing Committee Member",
+    "roleMl": "ക്ഷേമകാര്യ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "INC",
+    "partyFull": "Indian National Congress",
+    "image": "../assets/administration/members/ward-21.jpg"
+  },
+  {
+    "ward": 22,
+    "wardMl": "വെള്ളാർകുളം",
+    "name": "ദിൽഷാദ് നിസാം ഐ",
+    "role": "Finance Standing Committee Member",
+    "roleMl": "ധനകാര്യ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "CPI(M)",
+    "partyFull": "Communist Party of India (Marxist)",
+    "image": "../assets/administration/members/ward-22.jpg"
+  },
+  {
+    "ward": 23,
+    "wardMl": "പുത്തിരിത്തറ",
+    "name": "കൃഷ്ണകുമാർ പി",
+    "role": "Development Standing Committee Member",
+    "roleMl": "വികസന സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "BJP",
+    "partyFull": "Bharatiya Janata Party",
+    "image": "../assets/administration/members/ward-23.jpg"
+  },
+  {
+    "ward": 24,
+    "wardMl": "വടക്കേത്തറ",
+    "name": "മനോജ് എം",
+    "role": "Welfare Standing Committee Member",
+    "roleMl": "ക്ഷേമകാര്യ സ്റ്റാൻഡിംഗ് കമ്മിറ്റി അംഗം",
+    "party": "BJP",
+    "partyFull": "Bharatiya Janata Party",
+    "image": "../assets/administration/members/ward-24.jpg"
+  }
+]
