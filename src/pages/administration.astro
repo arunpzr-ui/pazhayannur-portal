@@ -2,8 +2,10 @@
 import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
 import town from "../data/town.json";
 import administration from "../data/administration.json";
+import panchayatOffice from "../assets/administration/panchayat-office.jpg";
 
 const currentCommittee = administration.timeline.at(-1)!;
 ---
@@ -42,6 +44,20 @@ const currentCommittee = administration.timeline.at(-1)!;
       </p>
       <p lang="ml" class="reveal font-mal text-rice/40 mt-2 max-w-xl leading-relaxed" style="--d:110ms">
         {currentCommittee.bodyMl}
+      </p>
+
+      <div class="reveal mt-12 rounded-2xl overflow-hidden border border-rice/12" style="--d:160ms">
+        <Image
+          src={panchayatOffice}
+          alt="Pazhayannur Grama Panchayat office building"
+          width={1600}
+          height={900}
+          class="w-full h-auto object-cover"
+        />
+      </div>
+      <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/35 mt-3">
+        Pazhayannur Grama Panchayat office
+        <span lang="ml" class="font-mal normal-case tracking-normal text-rice/30"> · പഴയന്നൂർ ഗ്രാമപഞ്ചായത്ത് ഓഫീസ്</span>
       </p>
     </div>
   </div>
