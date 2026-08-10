@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import culture from "../data/culture.json";
+import townCentre from "../assets/culture/town-centre.jpg";
 ---
 
 <Base
@@ -39,6 +41,20 @@ import culture from "../data/culture.json";
       </p>
       <p lang="ml" class="reveal font-mal text-rice/40 mt-2 max-w-xl leading-relaxed" style="--d:110ms">
         {culture.introMl}
+      </p>
+
+      <div class="reveal mt-12 rounded-2xl overflow-hidden border border-rice/12" style="--d:160ms">
+        <Image
+          src={townCentre}
+          alt="Aerial view of Pazhayannur town centre"
+          width={1600}
+          height={900}
+          class="w-full h-auto object-cover"
+        />
+      </div>
+      <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/35 mt-3">
+        Pazhayannur town centre
+        <span lang="ml" class="font-mal normal-case tracking-normal text-rice/30"> · പഴയന്നൂർ അങ്ങാടി</span>
       </p>
     </div>
   </div>

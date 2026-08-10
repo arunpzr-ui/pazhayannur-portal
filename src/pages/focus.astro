@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import focus from "../data/focus.json";
+import townJunction from "../assets/focus/town-junction.jpg";
 
 const totalCrores = Math.round((focus.totalBudget / 1e7) * 100) / 100;
 const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
@@ -40,6 +42,20 @@ const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
       <p class="reveal text-rice/60 mt-8 max-w-xl leading-relaxed" style="--d:110ms">
         The {focus.year} annual development plan — every project the panchayat's
         standing committees have budgeted for this year, grouped by sector.
+      </p>
+
+      <div class="reveal mt-12 rounded-2xl overflow-hidden border border-rice/12" style="--d:160ms">
+        <Image
+          src={townJunction}
+          alt="Aerial view of Pazhayannur town junction and bus stand"
+          width={1600}
+          height={900}
+          class="w-full h-auto object-cover"
+        />
+      </div>
+      <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/35 mt-3">
+        Pazhayannur junction and bus stand
+        <span lang="ml" class="font-mal normal-case tracking-normal text-rice/30"> · പഴയന്നൂർ ജംഗ്ഷൻ</span>
       </p>
     </div>
   </div>

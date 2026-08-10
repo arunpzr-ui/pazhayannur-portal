@@ -1,8 +1,11 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import town from "../data/town.json";
+import gayathripuzhaBridge from "../assets/geography/gayathripuzha-bridge.jpg";
+import riverCheckdam from "../assets/geography/river-checkdam.jpg";
 ---
 
 <Base
@@ -39,6 +42,31 @@ import town from "../data/town.json";
       </p>
       <p lang="ml" class="reveal font-mal text-rice/40 mt-2 max-w-xl leading-relaxed" style="--d:110ms">
         {town.rainfall.summaryMl}
+      </p>
+
+      <div class="reveal grid sm:grid-cols-2 gap-4 mt-12" style="--d:160ms">
+        <div class="rounded-2xl overflow-hidden border border-rice/12">
+          <Image
+            src={gayathripuzhaBridge}
+            alt="Bridge over the Gayathripuzha near Pazhayannur"
+            width={1200}
+            height={900}
+            class="w-full h-auto object-cover"
+          />
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-rice/12">
+          <Image
+            src={riverCheckdam}
+            alt="River regulator on the Gayathripuzha near Pazhayannur"
+            width={1200}
+            height={900}
+            class="w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+      <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/35 mt-3">
+        The Gayathripuzha, Pazhayannur's northern boundary
+        <span lang="ml" class="font-mal normal-case tracking-normal text-rice/30"> · ഗായത്രിപ്പുഴ</span>
       </p>
     </div>
   </div>
