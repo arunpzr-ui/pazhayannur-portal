@@ -8,6 +8,8 @@ import townJunction from "../assets/focus/town-junction.jpg";
 
 const totalCrores = Math.round((focus.totalBudget / 1e7) * 100) / 100;
 const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
+const maxSectorBudget = Math.max(...focus.sectors.map((s) => s.totalBudget));
+const pct = (n: number) => Math.round((n / focus.totalBudget) * 1000) / 10;
 ---
 
 <Base
@@ -140,6 +142,54 @@ const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
                   <span class="font-mono text-rice/70 whitespace-nowrap">{inr(b.amount)}</span>
                 </div>
               ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 pb-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-ink3)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">Budget by sector</span>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl">
+          Where the money goes
+          <span lang="ml" class="block font-mal text-base text-rice/45 mt-2">ബജറ്റ് വിഹിതം</span>
+        </h2>
+      </div>
+
+      <div class="reveal space-y-5 max-w-3xl" style="--d:80ms">
+        {focus.sectors.map((sector, si) => (
+          <div
+            class="group relative"
+            tabindex="0"
+            role="img"
+            aria-label={`${sector.title}: ${inr(sector.totalBudget)}, ${pct(sector.totalBudget)} percent of total budget, ${sector.projectCount} ${sector.projectCount === 1 ? "project" : "projects"}`}
+          >
+            <div class="flex items-baseline justify-between gap-3 mb-2">
+              <p class="text-sm">
+                <span class="font-mono text-[10px] text-rice/35 mr-2">{sector.code}</span>
+                {sector.title}
+              </p>
+              <p class="font-mono text-xs text-rice/60 whitespace-nowrap">{inr(sector.totalBudget)}</p>
+            </div>
+
+            <div class="h-3 rounded-full bg-rice/10 overflow-hidden">
+              <div
+                class="h-full rounded-full bg-turmeric"
+                style={`width: ${(sector.totalBudget / maxSectorBudget) * 100}%`}
+              ></div>
+            </div>
+
+            <div
+              class="pointer-events-none absolute -top-9 left-0 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 bg-ink2 border border-rice/15 rounded-lg px-3 py-1.5 text-xs whitespace-nowrap z-10"
+            >
+              <span class="font-mono text-turmeric">{pct(sector.totalBudget)}%</span>
+              <span class="text-rice/60">
+                {" "}of budget &middot; {sector.projectCount} {sector.projectCount === 1 ? "project" : "projects"}
+              </span>
             </div>
           </div>
         ))}
