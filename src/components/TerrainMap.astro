@@ -192,24 +192,33 @@
 
     // --- ward boundaries, draped the same way but thinner/muted so they
     // read as internal detail rather than competing with the panchayat
-    // outline itself ---
+    // outline itself. Real tube geometry, not a thin THREE.Line - GL
+    // line rendering has its own width/antialiasing artifacts at some
+    // viewing angles that no amount of data accuracy fixes, the same
+    // reason the panchayat boundary above is a tube and not a line. ---
     const wardGroup = new THREE.Group();
-    const wardMaterial = new THREE.LineBasicMaterial({
+    const wardTubeMaterial = new THREE.MeshStandardMaterial({
       color: 0xf4f0e4, // rice
+      emissive: 0xf4f0e4,
+      emissiveIntensity: 0.2,
+      roughness: 0.6,
       transparent: true,
-      opacity: 0.55,
+      opacity: 0.75,
     });
+    const wardTubeRadius = Math.max(3, widthMetres / 2400);
     const wards = (terrain as { wards?: { outer: [number, number][] }[] }).wards ?? [];
     for (const ward of wards) {
       const pts = ward.outer.map(([wx, wz]) => {
         const x = wx - widthMetres / 2;
         const z = wz - heightMetres / 2;
-        const y = toY(surfaceElevation(x, z)) + BOUNDARY_LIFT * 0.75;
+        const y = toY(surfaceElevation(x, z)) + BOUNDARY_LIFT;
         return new THREE.Vector3(x, y, z);
       });
-      if (pts.length > 0) pts.push(pts[0]);
-      const wardGeometry = new THREE.BufferGeometry().setFromPoints(pts);
-      wardGroup.add(new THREE.Line(wardGeometry, wardMaterial));
+      if (pts.length < 3) continue;
+      pts.push(pts[0]);
+      const wardCurve = new THREE.CatmullRomCurve3(pts, true, "catmullrom", 0.05);
+      const wardTube = new THREE.TubeGeometry(wardCurve, pts.length * 2, wardTubeRadius, 5, true);
+      wardGroup.add(new THREE.Mesh(wardTube, wardTubeMaterial));
     }
 
     // --- scene ---
