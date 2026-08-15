@@ -50,7 +50,11 @@
   import terrain from "../data/terrain.json";
 
   const VERTICAL_EXAGGERATION = 3.2;
-  const BOUNDARY_LIFT = 4; // metres above the surface, avoids z-fighting
+  // Comfortably clears the gap between the grid's coarse (~223m-cell)
+  // bilinear estimate and the true local surface on steep hillsides -
+  // a visibly hovering boundary line is standard practice for exactly
+  // this kind of overlay (Google Earth, park-boundary maps, etc).
+  const BOUNDARY_LIFT = 45;
 
   function initTerrain() {
     const container = document.getElementById("terrain-map") as HTMLElement | null;
