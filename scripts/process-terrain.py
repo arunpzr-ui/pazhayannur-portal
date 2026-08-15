@@ -6,10 +6,10 @@ from the KML, for a WebGL 3D terrain on the Geography page.
 Run manually (not part of the build):
     python scripts/process-terrain.py
 
-Requires scripts/Pazhayannur_panchayat.kml (copied in from the source
-KML the user supplied). Elevation comes from the free Open-Elevation
-API (https://api.open-elevation.com) - real SRTM-derived data, not
-invented or eyeballed from a map screenshot.
+Requires scripts/Pazhayannur_panchayat.kml and scripts/Pazhayannur_wards.kml
+(copied in from the source KML the user supplied). Elevation comes from
+the free Open-Elevation API (https://api.open-elevation.com) - real
+SRTM-derived data, not invented or eyeballed from a map screenshot.
 
 Coordinates are projected to real metres (equirectangular approximation
 centred on the panchayat's mean latitude), NOT the 1000-unit scale
@@ -18,6 +18,7 @@ ground-distance-to-elevation proportions, not an arbitrary icon scale.
 """
 import json
 import math
+import re
 import time
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -154,8 +155,30 @@ width_m, height_m = project(sample_lng_max, sample_lat_min)
 boundary_projected = [list(project(lng, lat)) for lng, lat in boundary_outer]
 holes_projected = [[list(project(lng, lat)) for lng, lat in hole] for hole in boundary_holes]
 
+# --- parse and project the 24 ward boundaries, same coordinate system ---
+wards_tree = ET.parse("scripts/Pazhayannur_wards.kml")
+wards_root = wards_tree.getroot()
+wards = []
+for pm2 in wards_root.findall(".//kml:Placemark", ns):
+    name_el = pm2.find("kml:name", ns)
+    raw_name = name_el.text.strip() if name_el is not None else "Ward"
+    poly2 = pm2.find(".//kml:Polygon", ns)
+    if poly2 is None:
+        continue
+    ward_outer, _ = parse_polygon(poly2)
+    m = re.match(r"Ward\s*(\d+)\s*-\s*(.+)", raw_name, re.IGNORECASE)
+    number = int(m.group(1)) if m else len(wards) + 1
+    label = m.group(2).strip().title() if m else raw_name.title()
+    wards.append({
+        "number": number,
+        "name": label,
+        "outer": [list(project(lng, lat)) for lng, lat in ward_outer],
+    })
+wards.sort(key=lambda w: w["number"])
+print(f"Parsed {len(wards)} ward boundaries")
+
 out = {
-    "_source": "Real elevation from api.open-elevation.com (SRTM-derived); boundary from user-supplied KML survey data.",
+    "_source": "Real elevation from api.open-elevation.com (SRTM-derived); boundary and ward outlines from user-supplied KML survey data.",
     "gridCols": GRID_COLS,
     "gridRows": GRID_ROWS,
     "widthMetres": width_m,
@@ -168,6 +191,7 @@ out = {
         "outer": boundary_projected,
         "holes": holes_projected,
     },
+    "wards": wards,
 }
 
 with open("src/data/terrain.json", "w", encoding="utf-8") as f:

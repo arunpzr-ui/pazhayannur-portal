@@ -175,9 +175,31 @@
     });
     const boundaryMesh = new THREE.Mesh(tubeGeometry, tubeMaterial);
 
+    // --- ward boundaries, draped the same way but thinner/muted so they
+    // read as internal detail rather than competing with the panchayat
+    // outline itself ---
+    const wardGroup = new THREE.Group();
+    const wardMaterial = new THREE.LineBasicMaterial({
+      color: 0xf4f0e4, // rice
+      transparent: true,
+      opacity: 0.35,
+    });
+    const wards = (terrain as { wards?: { outer: [number, number][] }[] }).wards ?? [];
+    for (const ward of wards) {
+      const pts = ward.outer.map(([wx, wz]) => {
+        const x = wx - widthMetres / 2;
+        const z = wz - heightMetres / 2;
+        const y = toY(nearestElevation(x, z)) + BOUNDARY_LIFT * 0.5;
+        return new THREE.Vector3(x, y, z);
+      });
+      if (pts.length > 0) pts.push(pts[0]);
+      const wardGeometry = new THREE.BufferGeometry().setFromPoints(pts);
+      wardGroup.add(new THREE.Line(wardGeometry, wardMaterial));
+    }
+
     // --- scene ---
     const scene = new THREE.Scene();
-    scene.add(terrainMesh, boundaryMesh);
+    scene.add(terrainMesh, boundaryMesh, wardGroup);
     scene.add(new THREE.AmbientLight(0xf4f0e4, 0.65));
     const sun = new THREE.DirectionalLight(0xf4f0e4, 1.1);
     sun.position.set(widthMetres * 0.3, widthMetres * 0.5, heightMetres * 0.2);
