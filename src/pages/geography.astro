@@ -4,6 +4,7 @@ import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import town from "../data/town.json";
+import TerrainMap from "../components/TerrainMap.astro";
 import gayathripuzhaBridge from "../assets/geography/gayathripuzha-bridge.jpg";
 import riverCheckdam from "../assets/geography/river-checkdam.jpg";
 ---
@@ -43,6 +44,14 @@ import riverCheckdam from "../assets/geography/river-checkdam.jpg";
       <p lang="ml" class="reveal font-mal text-rice/40 mt-2 max-w-xl leading-relaxed" style="--d:110ms">
         {town.rainfall.summaryMl}
       </p>
+
+      <div class="reveal mt-14" style="--d:140ms">
+        <h2 class="font-display font-bold text-xl mb-4">
+          The real shape of the land
+          <span lang="ml" class="font-mal text-sm text-rice/40 font-normal"> · യഥാർത്ഥ ഭൂപ്രകൃതി</span>
+        </h2>
+        <TerrainMap />
+      </div>
 
       <div class="reveal grid sm:grid-cols-2 gap-4 mt-12" style="--d:160ms">
         <div class="group rounded-2xl overflow-hidden border border-rice/12">

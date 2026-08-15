@@ -16,8 +16,9 @@
   },
   "elevation": {
     "min": 30,
-    "max": 220,
-    "unit": "m ASL"
+    "max": 494,
+    "unit": "m ASL",
+    "_sourceNote": "Max corrected from a previously published 220m after real SRTM-derived elevation sampling (via api.open-elevation.com) against the surveyed KML boundary showed a substantial hill region (12% of the panchayat's area) above 220m, peaking near 494m — likely near the southern reserve-forest edge. Not a single outlier: the top 15 sampled points form a smooth gradient from 494m down to 432m."
   },
   "area": {
     "value": 59.03,
@@ -55,7 +56,7 @@
       "key": "turmeric"
     },
     {
-      "value": 220,
+      "value": 494,
       "suffix": " m",
       "decimals": 0,
       "label": "Highest point",
@@ -98,7 +99,7 @@
     {
       "label": "Elevation",
       "ml": "ഉയരം",
-      "value": "30 – 220 m ASL"
+      "value": "30 – 494 m ASL"
     },
     {
       "label": "Soil",
