@@ -26,6 +26,18 @@
     </div>
     <canvas id="terrain-canvas" class="absolute inset-0 w-full h-full"></canvas>
 
+    <button
+      id="terrain-reset"
+      type="button"
+      aria-label="Reset view"
+      class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full glass glass-hover flex items-center justify-center outline-hidden focus-visible:outline-2 focus-visible:outline-turmeric focus-visible:outline-offset-2"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-rice/80" aria-hidden="true">
+        <path d="M3 12a9 9 0 1 0 3-6.7" />
+        <path d="M3 4v5h5" />
+      </svg>
+    </button>
+
     <div
       class="pointer-events-none absolute bottom-4 left-4 right-4 flex flex-wrap items-end justify-between gap-3"
     >
@@ -265,6 +277,40 @@
     controls.maxPolarAngle = Math.PI * 0.47;
     controls.target.set(0, 0, 0);
     controls.update();
+
+    const initialCameraPosition = camera.position.clone();
+    const initialTarget = controls.target.clone();
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const resetButton = document.getElementById("terrain-reset");
+    resetButton?.addEventListener("click", () => {
+      controls.enabled = false;
+      if (reduceMotion) {
+        camera.position.copy(initialCameraPosition);
+        controls.target.copy(initialTarget);
+        controls.update();
+        controls.enabled = true;
+        return;
+      }
+      const startPosition = camera.position.clone();
+      const startTarget = controls.target.clone();
+      const duration = 550;
+      const start = performance.now();
+      const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+      function animateReset(now: number) {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = easeOutCubic(t);
+        camera.position.lerpVectors(startPosition, initialCameraPosition, eased);
+        controls.target.lerpVectors(startTarget, initialTarget, eased);
+        controls.update();
+        if (t < 1) {
+          requestAnimationFrame(animateReset);
+        } else {
+          controls.enabled = true;
+        }
+      }
+      requestAnimationFrame(animateReset);
+    });
 
     const labelRenderer = new CSS2DRenderer();
     labelRenderer.domElement.style.position = "absolute";
