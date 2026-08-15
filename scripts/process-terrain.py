@@ -66,6 +66,27 @@ def point_in_ring(lng, lat, ring):
     return inside
 
 
+def centroid(ring):
+    """Area-weighted polygon centroid (same algorithm as kml_to_geo.py)."""
+    a = 0.0
+    cx = 0.0
+    cy = 0.0
+    n = len(ring)
+    for i in range(n):
+        x0, y0 = ring[i]
+        x1, y1 = ring[(i + 1) % n]
+        cross = x0 * y1 - x1 * y0
+        a += cross
+        cx += (x0 + x1) * cross
+        cy += (y0 + y1) * cross
+    a *= 0.5
+    if abs(a) < 1e-9:
+        xs = [p[0] for p in ring]
+        ys = [p[1] for p in ring]
+        return [round(sum(xs) / len(xs), 1), round(sum(ys) / len(ys), 1)]
+    return [round(cx / (6 * a), 1), round(cy / (6 * a), 1)]
+
+
 def point_in_boundary(lng, lat, outer, holes):
     if not point_in_ring(lng, lat, outer):
         return False
@@ -173,6 +194,7 @@ for pm2 in wards_root.findall(".//kml:Placemark", ns):
         "number": number,
         "name": label,
         "outer": [list(project(lng, lat)) for lng, lat in ward_outer],
+        "centroid": centroid([list(project(lng, lat)) for lng, lat in ward_outer]),
     })
 wards.sort(key=lambda w: w["number"])
 print(f"Parsed {len(wards)} ward boundaries")
