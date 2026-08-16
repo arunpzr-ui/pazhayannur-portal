@@ -6,6 +6,7 @@ import Footer from "../components/Footer.astro";
 import history from "../data/history.json";
 import nannangadi1 from "../assets/history/nannangadi-1.jpg";
 import nannangadi2 from "../assets/history/nannangadi-2.jpg";
+import nannangadi3 from "../assets/history/nannangadi-3.jpg";
 ---
 
 <Base
@@ -92,29 +93,38 @@ import nannangadi2 from "../assets/history/nannangadi-2.jpg";
 
                 {entry.slug === "nannangadi" && (
                   <div class="mt-8">
-                    <div class="grid sm:grid-cols-2 gap-4 max-w-3xl">
-                      <div class="group rounded-xl overflow-hidden border border-rice/12">
+                    <div class="grid sm:grid-cols-3 gap-4 max-w-4xl">
+                      <div class="group rounded-xl overflow-hidden border border-rice/12 h-48 sm:h-56">
                         <Image
                           src={nannangadi1}
                           alt={entry.imageAlt}
-                          width={900}
-                          height={1200}
-                          class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                          width={800}
+                          height={600}
+                          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>
-                      <div class="group rounded-xl overflow-hidden border border-rice/12">
+                      <div class="group rounded-xl overflow-hidden border border-rice/12 h-48 sm:h-56">
                         <Image
                           src={nannangadi2}
                           alt="One of several Nannangadi dolmens at the site, Pazhayannur"
-                          width={1200}
-                          height={900}
-                          class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                          width={800}
+                          height={600}
+                          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <div class="group rounded-xl overflow-hidden border border-rice/12 h-48 sm:h-56">
+                        <Image
+                          src={nannangadi3}
+                          alt="One of several Nannangadi dolmens at the site, Pazhayannur"
+                          width={800}
+                          height={600}
+                          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>
                     </div>
                     <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/35 mt-3">
-                      Two of several Nannangadis at a megalithic site in Pazhayannur's northern areas
-                      <span lang="ml" class="font-mal normal-case tracking-normal text-rice/30"> · പഴയന്നൂരിന്റെ വടക്കൻ മേഖലയിലെ നന്നങ്ങാടികളിൽ രണ്ടെണ്ണം</span>
+                      Nannangadis at a megalithic site in Pazhayannur's northern areas
+                      <span lang="ml" class="font-mal normal-case tracking-normal text-rice/30"> · പഴയന്നൂരിന്റെ വടക്കൻ മേഖലയിലെ നന്നങ്ങാടികൾ</span>
                     </p>
                   </div>
                 )}
