@@ -1,8 +1,11 @@
 ---
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import history from "../data/history.json";
+import nannangadi1 from "../assets/history/nannangadi-1.jpg";
+import nannangadi2 from "../assets/history/nannangadi-2.jpg";
 ---
 
 <Base
@@ -86,6 +89,35 @@ import history from "../data/history.json";
                 <p lang="ml" class="font-mal text-rice/40 leading-relaxed max-w-3xl mt-4">
                   {entry.summaryMl}
                 </p>
+
+                {entry.slug === "nannangadi" && (
+                  <div class="mt-8">
+                    <div class="grid sm:grid-cols-2 gap-4 max-w-3xl">
+                      <div class="group rounded-xl overflow-hidden border border-rice/12">
+                        <Image
+                          src={nannangadi1}
+                          alt={entry.imageAlt}
+                          width={900}
+                          height={1200}
+                          class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <div class="group rounded-xl overflow-hidden border border-rice/12">
+                        <Image
+                          src={nannangadi2}
+                          alt="A Nannangadi dolmen site in Pazhayannur, wider view"
+                          width={1200}
+                          height={900}
+                          class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
+                    <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/35 mt-3">
+                      A Nannangadi in Pazhayannur's northern areas
+                      <span lang="ml" class="font-mal normal-case tracking-normal text-rice/30"> · നന്നങ്ങാടി</span>
+                    </p>
+                  </div>
+                )}
               </div>
             </li>
           ))}

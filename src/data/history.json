@@ -1,5 +1,19 @@
 [
   {
+    "slug": "nannangadi",
+    "era": "c. 1000 BCE – 500 CE",
+    "eraMl": "മഹാശിലായുഗം",
+    "title": "The megalithic burial urns",
+    "titleMl": "നന്നങ്ങാടികൾ",
+    "summary": "Nannangadis — megalithic burial urns found in the panchayat's northern areas — are remains of the Megalithic Culture that existed in Kerala between the 10th century BCE and the 5th century CE. Full or partial skeletal remains were interred in these large clay urns, along with iron implements, grain and small black-and-red pottery for use in the afterlife, a practice often compared to Egyptian mummification. Local legend tells of elders who lived to 120 or 130, said to shrink with age, laid to rest in these urns with food and clothing out of reverence — that account belongs to oral tradition, not the archaeological record.",
+    "summaryMl": "പഴയന്നൂർ ഗ്രാമപഞ്ചായത്തിന്റെ വടക്കൻ മേഖലകളിൽ കണ്ടെത്തിയ നന്നങ്ങാടികൾ, ബി.സി. പത്താം നൂറ്റാണ്ടിനും എ.ഡി. അഞ്ചാം നൂറ്റാണ്ടിനും ഇടയിൽ കേരളത്തിൽ നിലനിന്നിരുന്ന മഹാശിലായുഗ സംസ്കാരത്തിന്റെ അവശേഷിപ്പുകളാണ്. മൃതദേഹങ്ങളോ അസ്ഥികളോ ഈ വലിയ മൺഭരണികളിൽ അടക്കം ചെയ്യുകയും, പരലോകത്ത് ഉപയോഗിക്കാൻ ഇരുമ്പായുധങ്ങളും ധാന്യങ്ങളും കറുപ്പും ചുവപ്പും നിറമുള്ള മൺപാത്രങ്ങളും നിക്ഷേപിക്കുകയും ചെയ്തിരുന്നു — ഈജിപ്ഷ്യൻ മമ്മികളുമായി പലപ്പോഴും താരതമ്യം ചെയ്യപ്പെടുന്ന ഒരു സമ്പ്രദായം. 120-130 വയസ്സുവരെ ജീവിച്ച കാരണവന്മാർ വാർദ്ധക്യത്തിൽ ചുരുങ്ങുമെന്നും, ആദരവോടെ ഭക്ഷണവും വസ്ത്രവുമായി ഭരണികളിൽ അടക്കുമെന്നും ഒരു നാട്ടുവിശ്വാസമുണ്ട് — ഇത് പുരാവസ്തുരേഖയല്ല, വാമൊഴി പാരമ്പര്യമാണ്.",
+    "sourceType": "documented",
+    "_sourceNote": "The megalithic-culture dating and urn-burial practice are archaeologically documented. The 'Muthumakkathazhikal' elder-shrinking account is explicitly oral legend, kept clearly hedged as such within the summary rather than stated as fact.",
+    "image": "nannangadi-1.jpg",
+    "imageAlt": "A Nannangadi dolmen site in Pazhayannur",
+    "featured": true
+  },
+  {
     "slug": "origins",
     "era": "Origins",
     "eraMl": "പേരിന്റെ പിറവി",
@@ -11,7 +25,7 @@
     "_sourceNote": "Two competing accounts, both oral tradition. Phrase as tradition, never as documented fact.",
     "image": "history-origins.jpg",
     "imageAlt": "Placeholder — replace with a photograph of the temple or the old settlement",
-    "featured": true
+    "featured": false
   },
   {
     "slug": "kuttadanthodu",
