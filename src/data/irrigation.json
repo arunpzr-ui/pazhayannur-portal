@@ -1,0 +1,39 @@
+[
+  {
+    "slug": "cheerakuzhi",
+    "name": "The Cheerakuzhi Irrigation Project",
+    "nameMl": "ചീരക്കുഴി ജലസേചന പദ്ധതി",
+    "description": "A masonry weir across the Gayathripuzha — the Bharathapuzha's main tributary — just upstream of the bridge on the Pazhayannur–Thiruvilwamala road, sitting on the boundary between northern Thrissur and southern Palakkad districts.",
+    "descriptionMl": "ഭാരതപ്പുഴയുടെ പ്രധാന പോഷകനദിയായ ഗായത്രിപ്പുഴയ്ക്ക് കുറുകെ, പഴയന്നൂർ-തിരുവില്വാമല റോഡിലെ പാലത്തിന് അപ്‌സ്ട്രീമായി നിർമ്മിച്ച മേസൺറി തടയണ — തൃശൂർ ജില്ലയുടെ വടക്കും പാലക്കാട് ജില്ലയുടെ തെക്കുമായുള്ള അതിർത്തിയിലാണ് ഇതിന്റെ സ്ഥാനം.",
+    "timeline": [
+      { "year": 1957, "label": "Construction begins", "labelMl": "നിർമ്മാണം ആരംഭിച്ചു" },
+      { "year": 1968, "label": "Construction completed", "labelMl": "നിർമ്മാണം പൂർത്തിയായി" },
+      { "year": 1973, "label": "Commissioned", "labelMl": "കമ്മീഷൻ ചെയ്തു" }
+    ],
+    "stats": [
+      { "label": "Total canal length", "labelMl": "മൊത്തം കനാൽ നീളം", "value": "50.70 km" },
+      { "label": "Main canal", "labelMl": "പ്രധാന കനാൽ", "value": "40.90 km" },
+      { "label": "Branch canals", "labelMl": "ശാഖാ കനാലുകൾ", "value": "4 · 9.8 km" },
+      { "label": "Ayacut (irrigated area)", "labelMl": "ജലസേചന പ്രദേശം", "value": "1,200 ha" }
+    ],
+    "operation": "Flow into the canal is regulated through a sluice on the reservoir's left bank; the main canal begins at 36.12 m above sea level. The project mainly serves mundakan (second-crop paddy) cultivation. Water remaining at the end of the canal network is finally released into the Bharathapuzha at Kondayur.",
+    "operationMl": "സംഭരണിയുടെ ഇടതുവശത്തുള്ള സ്ലൂയിസ് (മതക്) വഴിയാണ് കനാലിലേക്കുള്ള ജലപ്രവാഹം നിയന്ത്രിക്കുന്നത്. സമുദ്രനിരപ്പിൽ നിന്ന് 36.12 മീറ്റർ ഉയരത്തിലാണ് പ്രധാന കനാൽ ആരംഭിക്കുന്നത്. പ്രധാനമായും മുണ്ടകൻ വിളകൾക്കാണ് ഈ പദ്ധതി ഏറ്റവും കൂടുതൽ പ്രയോജനപ്പെടുന്നത്. കനാലിലെ ബാക്കിയുള്ള ജലം ഒടുവിൽ കൊണ്ടയൂരിൽ വെച്ച് ഭാരതപ്പുഴയിലേക്ക് ഒഴുക്കിവിടുന്നു.",
+    "villages": [
+      { "en": "Pazhayannur", "ml": "പഴയന്നൂർ" },
+      { "en": "Vadakkethara", "ml": "വടക്കേത്തറ" },
+      { "en": "Kondazhi", "ml": "കൊണ്ടാഴി" },
+      { "en": "Mayannur", "ml": "മായന്നൂർ" },
+      { "en": "Thozhuppadam", "ml": "തൊഴുപ്പാടം" },
+      { "en": "Panjal", "ml": "പാഞ്ഞാൾ" },
+      { "en": "Painkulam", "ml": "പൈങ്കുളം" },
+      { "en": "Cheruthuruthy", "ml": "ചെറുതുരുത്തി" },
+      { "en": "Nedumpura", "ml": "നെടുമ്പുര" },
+      { "en": "Desamangalam", "ml": "ദേശമംഗലം" },
+      { "en": "Kondayur", "ml": "കൊണ്ടയൂർ" }
+    ],
+    "villagesNote": "The sole source of irrigation for these 11 villages of Thalappilly Taluk, Thrissur District.",
+    "villagesNoteMl": "തൃശൂർ ജില്ലയിലെ തലപ്പിള്ളി താലൂക്കിലുള്ള ഈ 11 വില്ലേജുകളിലെ കൃഷിയിടങ്ങളിലേക്കുള്ള ഏക ജലസേചന സ്രോതസ്സാണ് ചീരക്കുഴി പദ്ധതി.",
+    "image": "river-checkdam.jpg",
+    "imageAlt": "The Cheerakuzhi weir on the Gayathripuzha near Pazhayannur"
+  }
+]

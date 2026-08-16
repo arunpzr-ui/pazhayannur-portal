@@ -4,6 +4,7 @@ import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import town from "../data/town.json";
+import irrigation from "../data/irrigation.json";
 import TerrainMap from "../components/TerrainMap.astro";
 import gayathripuzhaBridge from "../assets/geography/gayathripuzha-bridge.jpg";
 import riverCheckdam from "../assets/geography/river-checkdam.jpg";
@@ -66,7 +67,7 @@ import riverCheckdam from "../assets/geography/river-checkdam.jpg";
         <div class="group rounded-2xl overflow-hidden border border-rice/12">
           <Image
             src={riverCheckdam}
-            alt="River regulator on the Gayathripuzha near Pazhayannur"
+            alt="The Cheerakuzhi weir on the Gayathripuzha near Pazhayannur"
             width={1200}
             height={900}
             class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
@@ -168,6 +169,78 @@ import riverCheckdam from "../assets/geography/river-checkdam.jpg";
   </section>
 
   <section class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="rule mb-6" style="--key: var(--color-vaka)"></div>
+      <div class="reveal flex items-baseline gap-4 mb-10">
+        <span class="font-mono text-xs text-rice/40">Irrigation</span>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl">
+          Water for the fields
+          <span lang="ml" class="block font-mal text-base text-rice/45 mt-2">ജലസേചനം</span>
+        </h2>
+      </div>
+
+      {irrigation.map((project, pi) => (
+        <div class="reveal" style={`--d:${pi * 100}ms`}>
+          <h3 class="font-display font-bold text-2xl md:text-3xl mb-1">{project.name}</h3>
+          <p lang="ml" class="font-mal text-base text-rice/40 mb-6">{project.nameMl}</p>
+
+          <p class="text-rice/65 leading-relaxed max-w-3xl">{project.description}</p>
+          <p lang="ml" class="font-mal text-rice/40 leading-relaxed max-w-3xl mt-3">{project.descriptionMl}</p>
+
+          <div class="grid grid-cols-3 gap-6 max-w-lg mt-10">
+            {project.timeline.map((t) => (
+              <div>
+                <p
+                  class="font-display font-extrabold text-3xl md:text-4xl text-vaka"
+                  data-count={t.year}
+                  data-decimals="0"
+                  data-suffix=""
+                >
+                  0
+                </p>
+                <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mt-2">{t.label}</p>
+                <p lang="ml" class="font-mal text-xs text-rice/35 mt-1">{t.labelMl}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4 max-w-3xl mt-10">
+            {project.stats.map((s, i) => (
+              <div class="glass glass-hover rounded-2xl p-6" style={`--d:${i * 90}ms`}>
+                <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-vaka/80 mb-2">{s.label}</p>
+                <p class="text-rice/70">{s.value}</p>
+                <p lang="ml" class="font-mal text-sm text-rice/40 mt-1">{s.labelMl}</p>
+              </div>
+            ))}
+          </div>
+
+          <p class="text-rice/65 leading-relaxed max-w-3xl mt-10">{project.operation}</p>
+          <p lang="ml" class="font-mal text-rice/40 leading-relaxed max-w-3xl mt-3">{project.operationMl}</p>
+
+          <div class="mt-10">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mb-4">
+              Beneficiary villages
+              <span lang="ml" class="font-mal normal-case tracking-normal text-rice/35"> · ഗുണഭോക്തൃ വില്ലേജുകൾ</span>
+            </p>
+            <div class="flex flex-wrap gap-2 max-w-3xl">
+              {project.villages.map((v) => (
+                <span class="font-mono text-xs px-3 py-1.5 rounded-full border border-rice/20 text-rice/70">
+                  {v.en}
+                  <span lang="ml" class="font-mal normal-case text-rice/40"> · {v.ml}</span>
+                </span>
+              ))}
+            </div>
+            <p class="text-rice/50 text-sm leading-relaxed max-w-3xl mt-4">{project.villagesNote}</p>
+            <p lang="ml" class="font-mal text-rice/35 text-sm leading-relaxed max-w-3xl mt-1">
+              {project.villagesNoteMl}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="px-6 py-24 bg-ink2 border-y border-rice/12">
     <div class="mx-auto max-w-6xl">
       <div class="rule mb-6" style="--key: var(--color-vaka)"></div>
       <div class="reveal flex items-baseline gap-4 mb-10">
