@@ -48,13 +48,13 @@ const currentCommittee = administration.timeline.at(-1)!;
         {currentCommittee.bodyMl}
       </p>
 
-      <div class="reveal mt-12 rounded-2xl overflow-hidden border border-rice/12" style="--d:160ms">
+      <div class="reveal group mt-12 rounded-2xl overflow-hidden border border-rice/12" style="--d:160ms">
         <Image
           src={panchayatOffice}
           alt="Pazhayannur Grama Panchayat office building"
           width={1600}
           height={900}
-          class="w-full h-auto object-cover"
+          class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
       <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-rice/35 mt-3">

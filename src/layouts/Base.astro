@@ -18,6 +18,7 @@ import "@fontsource/anek-malayalam/latin.css";
 import "../styles/global.css";
 import town from "../data/town.json";
 import Banner from "../components/Banner.astro";
+import BackToTop from "../components/BackToTop.astro";
 
 interface Props {
   /** Page title, without the site suffix. */
@@ -123,6 +124,8 @@ const jsonLd = {
     </main>
 
     <slot name="footer" />
+
+    <BackToTop />
 
     <script>
       /**

@@ -25,3 +25,7 @@ pnpm-debug.log*
 
 # stray installers, not part of the project
 *.exe
+
+# raw source survey/plan files processed by scripts/ - only the
+# processing script and its derived JSON output are committed
+*.kml

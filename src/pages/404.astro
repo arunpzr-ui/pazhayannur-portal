@@ -1,0 +1,70 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { sections } from "../lib/sections";
+---
+
+<Base
+  title="Page not found"
+  description="The page you're looking for doesn't exist on the Pazhayannur community portal."
+  noindex={true}
+>
+  <Fragment slot="nav">
+    <Nav />
+  </Fragment>
+
+  <div class="relative overflow-hidden pt-40 pb-28 px-6 min-h-[80vh] flex items-center">
+    <div class="mx-auto max-w-6xl w-full">
+      <div class="tagline-rule mb-6"></div>
+
+      <p class="reveal font-mono text-[10px] tracking-[0.22em] uppercase text-rice/45 mb-4">
+        404 &middot; Not found
+      </p>
+
+      <h1 class="reveal font-display font-extrabold text-6xl md:text-8xl leading-[0.92] tracking-[-0.035em]">
+        404
+      </h1>
+
+      <p class="reveal font-display font-bold text-2xl md:text-3xl mt-6">
+        This page doesn't exist
+        <span lang="ml" class="block font-mal text-lg text-rice/45 mt-3 font-normal">
+          ഈ പേജ് കണ്ടെത്തിയില്ല
+        </span>
+      </p>
+
+      <p class="reveal text-rice/60 mt-6 max-w-xl leading-relaxed" style="--d:110ms">
+        The page you're looking for may have moved or never existed. Here's
+        where you can go instead.
+      </p>
+      <p
+        lang="ml"
+        class="reveal font-mal text-rice/40 mt-2 max-w-xl leading-relaxed"
+        style="--d:110ms"
+      >
+        നിങ്ങൾ അന്വേഷിക്കുന്ന പേജ് മാറ്റിയതോ ഇല്ലാത്തതോ ആകാം. പകരം ഇവിടേക്ക് പോകാം.
+      </p>
+
+      <div class="reveal flex flex-wrap gap-3 mt-10" style="--d:160ms">
+        <a
+          href="/"
+          class="glass glass-hover rounded-full px-6 py-3 font-mono text-[11px] tracking-[0.18em] uppercase text-rice/80"
+        >
+          &larr; Home
+        </a>
+        {sections.map((s) => (
+          <a
+            href={s.page ?? `/#${s.id}`}
+            class="glass glass-hover rounded-full px-6 py-3 font-mono text-[11px] tracking-[0.18em] uppercase text-rice/70"
+          >
+            {s.en}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</Base>
